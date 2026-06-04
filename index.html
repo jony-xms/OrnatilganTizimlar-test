@@ -6,47 +6,31 @@
 <title>O'rnatilgan Tizimlar Testi</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#07090f;--s1:#0f1420;--s2:#161d2e;--s3:#1e2840;
-  --border:rgba(255,255,255,0.07);
-  --accent:#6366f1;--accent2:#8b5cf6;
-  --green:#10b981;--red:#f43f5e;--yellow:#f59e0b;--cyan:#06b6d4;
-  --text:#f0f4ff;--muted:#94a3b8;--muted2:#64748b;
-}
+:root{--bg:#07090f;--s1:#0f1420;--s2:#161d2e;--s3:#1e2840;--border:rgba(255,255,255,0.07);--accent:#6366f1;--accent2:#8b5cf6;--green:#10b981;--red:#f43f5e;--yellow:#f59e0b;--cyan:#06b6d4;--text:#f0f4ff;--muted:#94a3b8;--muted2:#64748b;}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -20%,rgba(99,102,241,0.12),transparent);pointer-events:none;z-index:0}
 .app{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:20px 16px 80px}
-
-/* HEADER */
-.hdr{text-align:center;padding:30px 0 22px}
+.hdr{text-align:center;padding:28px 0 20px}
 .hdr-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);border-radius:20px;padding:5px 14px;margin-bottom:14px}
-.hdr h1{font-family:'Syne',sans-serif;font-size:clamp(24px,4vw,38px);font-weight:800;background:linear-gradient(135deg,#f0f4ff 20%,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.hdr h1{font-family:'Syne',sans-serif;font-size:clamp(22px,4vw,36px);font-weight:800;background:linear-gradient(135deg,#f0f4ff 20%,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
 .hdr p{color:var(--muted);font-size:13px}
-
-/* TABS */
-.tabs{display:flex;gap:4px;background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:4px;margin-bottom:16px}
+.tabs{display:flex;gap:4px;background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:4px;margin-bottom:14px}
 .tab{flex:1;padding:9px;text-align:center;font-size:13px;font-weight:600;border-radius:10px;cursor:pointer;color:var(--muted);transition:all .2s;font-family:'Syne',sans-serif;position:relative}
 .tab.active{background:var(--accent);color:#fff;box-shadow:0 4px 16px rgba(99,102,241,.35)}
 .tab-badge{position:absolute;top:-6px;right:-4px;background:var(--red);color:#fff;font-size:10px;font-weight:700;border-radius:8px;padding:1px 5px;min-width:18px;text-align:center;display:none}
-
-/* STATS */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
 .stat{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:12px 8px;text-align:center}
 .stat-n{font-family:'Syne',sans-serif;font-size:24px;font-weight:700}
 .stat-l{font-size:11px;color:var(--muted2);margin-top:3px;text-transform:uppercase;letter-spacing:.4px}
 .c-blue{color:#818cf8}.c-green{color:var(--green)}.c-red{color:var(--red)}.c-yellow{color:var(--yellow)}
-
-/* PROGRESS */
-.prog-wrap{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-bottom:14px}
+.prog-wrap{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-bottom:12px}
 .prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .prog-lbl{font-size:12px;color:var(--muted)}
 .prog-pct{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--accent)}
 .prog-bar{background:rgba(255,255,255,.05);border-radius:6px;height:5px;overflow:hidden}
 .prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:6px;transition:width .5s cubic-bezier(.4,0,.2,1)}
-
-/* MAVZU */
-.mavzu-wrap{margin-bottom:14px}
+.mavzu-wrap{margin-bottom:12px}
 .mavzu-lbl{font-size:11px;color:var(--muted2);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
 .mavzu-btns{display:flex;gap:8px;flex-wrap:wrap}
 .mavzu-btn{padding:7px 16px;border:1px solid var(--border);border-radius:10px;cursor:pointer;font-size:12px;font-weight:600;background:var(--s1);color:var(--muted);transition:all .2s;font-family:'Syne',sans-serif;position:relative}
@@ -54,100 +38,105 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .mavzu-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;color:#fff}
 .m-badge{position:absolute;top:-5px;right:-5px;background:var(--green);color:#fff;font-size:9px;font-weight:700;border-radius:6px;padding:1px 4px}
 
-/* QUESTION NAV DOTS */
-.qnav-wrap{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:14px}
+/* QUESTION NAV */
+.qnav-wrap{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:12px}
 .qnav-lbl{font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-weight:600}
 .qnav-dots{display:flex;flex-wrap:wrap;gap:5px}
-.qnav-dot{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'Syne',sans-serif;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.05);color:var(--muted2);border:1px solid transparent}
+.qnav-dot{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'Syne',sans-serif;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.04);color:var(--muted2);border:1px solid transparent;flex-shrink:0}
 .qnav-dot:hover{border-color:var(--accent);color:var(--accent)}
-.qnav-dot.done-ok{background:rgba(16,185,129,.2);color:var(--green);border-color:rgba(16,185,129,.3)}
-.qnav-dot.done-no{background:rgba(244,63,94,.2);color:var(--red);border-color:rgba(244,63,94,.3)}
-.qnav-dot.current{background:var(--accent);color:#fff;border-color:var(--accent);transform:scale(1.1)}
-.qnav-dot.future{opacity:.4}
+/* Statuses — must override each other cleanly */
+.qnav-dot.done-ok{background:rgba(16,185,129,.18)!important;color:var(--green)!important;border-color:rgba(16,185,129,.35)!important}
+.qnav-dot.done-no{background:rgba(244,63,94,.18)!important;color:var(--red)!important;border-color:rgba(244,63,94,.35)!important}
+.qnav-dot.current{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important;transform:scale(1.12)}
+
+/* COUNTDOWN */
+.cd-wrap{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-bottom:12px;display:none}
+.cd-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.cd-lbl{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:7px}
+.cd-time{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--cyan);transition:color .3s}
+.cd-time.warn{color:var(--yellow)}
+.cd-time.danger{color:var(--red);animation:pulse .8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.cd-bar{height:5px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden}
+.cd-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--green),var(--cyan));transition:width .9s linear,background .5s}
+.cd-fill.warn{background:linear-gradient(90deg,var(--yellow),#fb923c)}
+.cd-fill.danger{background:linear-gradient(90deg,var(--red),#fb923c)}
 
 /* STREAK */
-.streak-wrap{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:14px;min-height:12px}
-.s-dot{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.07);transition:background .3s}
+.streak-wrap{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px;min-height:12px}
+.s-dot{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.07)}
 .s-dot.ok{background:var(--green)}
 .s-dot.no{background:var(--red)}
 
-/* COUNTDOWN TIMER */
-.countdown-bar{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.cd-left{display:flex;align-items:center;gap:10px}
-.cd-icon{font-size:18px}
-.cd-label{font-size:13px;color:var(--muted)}
-.cd-time{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--cyan);min-width:64px;text-align:right;transition:color .3s}
-.cd-time.warn{color:var(--yellow)}
-.cd-time.danger{color:var(--red);animation:pulse .8s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-.cd-bar{height:4px;background:rgba(255,255,255,.06);border-radius:4px;margin-top:8px;overflow:hidden}
-.cd-bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:4px;transition:width .5s linear,background .5s}
-.cd-bar-fill.warn{background:linear-gradient(90deg,var(--yellow),#fb923c)}
-.cd-bar-fill.danger{background:linear-gradient(90deg,var(--red),#fb923c)}
-
 /* QUESTION CARD */
 .q-card{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:24px;animation:slideUp .3s ease}
-@keyframes slideUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.q-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.q-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .q-topic{font-size:11px;font-weight:600;color:var(--accent);background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.2);padding:4px 12px;border-radius:8px;letter-spacing:.5px;text-transform:uppercase}
 .q-num{font-family:'Syne',sans-serif;font-size:13px;color:var(--muted2);font-weight:600}
-.q-text{font-size:16px;font-weight:500;color:var(--text);margin-bottom:18px;line-height:1.6;padding:13px 15px;background:var(--s2);border-radius:12px;border-left:3px solid var(--accent)}
+.q-text{font-size:15px;font-weight:500;color:var(--text);margin-bottom:18px;line-height:1.65;padding:14px 16px;background:var(--s2);border-radius:12px;border-left:3px solid var(--accent)}
 .opts{display:flex;flex-direction:column;gap:8px}
-.opt{padding:12px 15px;border:1px solid var(--border);border-radius:12px;cursor:pointer;font-size:14px;background:var(--s2);color:var(--muted);text-align:left;transition:all .18s;display:flex;align-items:center;gap:11px;line-height:1.45}
-.opt-ltr{width:27px;height:27px;border-radius:7px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;flex-shrink:0;color:var(--muted2);transition:all .18s}
+.opt{padding:12px 15px;border:1px solid var(--border);border-radius:12px;cursor:pointer;font-size:14px;background:var(--s2);color:var(--muted);text-align:left;transition:all .18s;display:flex;align-items:flex-start;gap:11px;line-height:1.5}
+.opt-ltr{width:27px;height:27px;border-radius:7px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;flex-shrink:0;color:var(--muted2);transition:all .18s;margin-top:1px}
 .opt:hover:not(:disabled){border-color:var(--accent);background:rgba(99,102,241,.08);color:var(--text)}
 .opt:hover:not(:disabled) .opt-ltr{background:var(--accent);color:#fff}
 .opt.correct{border-color:var(--green);background:rgba(16,185,129,.1);color:var(--green)}
 .opt.correct .opt-ltr{background:var(--green);color:#fff}
 .opt.wrong{border-color:var(--red);background:rgba(244,63,94,.1);color:#fca5a5}
 .opt.wrong .opt-ltr{background:var(--red);color:#fff}
+/* Read-only view (already answered, jumped back) */
+.opt.readonly-ok{border-color:rgba(16,185,129,.5);background:rgba(16,185,129,.07);color:var(--green);cursor:default}
+.opt.readonly-ok .opt-ltr{background:rgba(16,185,129,.4);color:#fff}
+.opt.readonly-no{border-color:rgba(244,63,94,.4);background:rgba(244,63,94,.07);color:#fca5a5;cursor:default}
+.opt.readonly-no .opt-ltr{background:rgba(244,63,94,.35);color:#fff}
 .opt:disabled{cursor:default}
+
 .fb{margin-top:13px;padding:11px 15px;border-radius:12px;font-size:14px;font-weight:500;display:none;align-items:center;gap:10px;animation:slideUp .25s ease}
 .fb.show{display:flex}
 .fb.ok{background:rgba(16,185,129,.1);color:var(--green);border:1px solid rgba(16,185,129,.2)}
 .fb.no{background:rgba(244,63,94,.1);color:#fca5a5;border:1px solid rgba(244,63,94,.2)}
-.fb-ico{font-size:18px;flex-shrink:0}
-.q-footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px}
+.fb.viewed{background:rgba(100,116,139,.1);color:var(--muted);border:1px solid rgba(100,116,139,.2)}
+
+.q-footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px;flex-wrap:wrap}
 .flag-btn{padding:7px 13px;background:var(--s2);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-size:12px;color:var(--muted2);transition:all .2s;display:flex;align-items:center;gap:5px}
 .flag-btn:hover{border-color:var(--yellow);color:var(--yellow)}
 .flag-btn.flagged{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.3);color:var(--yellow)}
 .next-btn{padding:10px 26px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Syne',sans-serif;transition:opacity .2s;display:none}
 .next-btn:hover{opacity:.88}
+.continue-btn{padding:10px 22px;background:rgba(99,102,241,.15);color:var(--accent);border:1px solid rgba(99,102,241,.3);border-radius:12px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Syne',sans-serif;display:none}
+.continue-btn:hover{background:rgba(99,102,241,.25)}
 
-/* TIME PICKER MODAL */
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:100;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
-.modal{background:var(--s1);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px 28px;max-width:420px;width:90%;animation:slideUp .3s ease;text-align:center}
-.modal h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px}
-.modal p{color:var(--muted);font-size:14px;margin-bottom:24px;line-height:1.6}
-.time-options{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
-.time-opt{padding:14px 20px;border:1px solid var(--border);border-radius:12px;cursor:pointer;font-size:15px;font-weight:600;background:var(--s2);color:var(--muted);transition:all .2s;display:flex;align-items:center;justify-content:space-between;font-family:'Syne',sans-serif}
+.modal{background:var(--s1);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:28px 24px;max-width:420px;width:92%;animation:slideUp .3s ease;text-align:center}
+.modal h2{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin-bottom:6px}
+.modal p{color:var(--muted);font-size:13px;margin-bottom:20px;line-height:1.65}
+.time-options{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.time-opt{padding:13px 18px;border:1px solid var(--border);border-radius:12px;cursor:pointer;font-size:14px;font-weight:600;background:var(--s2);color:var(--muted);transition:all .2s;display:flex;align-items:center;justify-content:space-between;font-family:'Syne',sans-serif}
 .time-opt:hover{border-color:var(--accent);color:var(--text);background:rgba(99,102,241,.1)}
-.time-opt .time-desc{font-size:12px;color:var(--muted2);font-weight:400;font-family:'DM Sans',sans-serif}
-.custom-time{display:flex;gap:8px;margin-bottom:16px}
-.custom-time input{flex:1;padding:10px 14px;background:var(--s2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:15px;font-family:'Syne',sans-serif;font-weight:600;text-align:center;outline:none}
-.custom-time input:focus{border-color:var(--accent)}
-.custom-time button{padding:10px 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:10px;cursor:pointer;font-size:13px;font-weight:600;font-family:'Syne',sans-serif}
-
-/* TIME UP SCREEN */
-.timeup-card{background:var(--s1);border:1px solid rgba(244,63,94,.3);border-radius:20px;padding:40px 28px;text-align:center;animation:slideUp .4s ease}
-.timeup-ico{font-size:56px;margin-bottom:16px}
-.timeup-title{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--red);margin-bottom:8px}
-.timeup-sub{color:var(--muted);font-size:14px;margin-bottom:24px;line-height:1.6}
+.time-opt .td{font-size:12px;color:var(--muted2);font-weight:400;font-family:'DM Sans',sans-serif}
+.custom-row{display:flex;gap:8px}
+.custom-row input{flex:1;padding:10px 14px;background:var(--s2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:15px;font-family:'Syne',sans-serif;font-weight:600;text-align:center;outline:none}
+.custom-row input:focus{border-color:var(--accent)}
+.custom-row button{padding:10px 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:10px;cursor:pointer;font-size:13px;font-weight:600;font-family:'Syne',sans-serif}
 
 /* DONE */
 .done-card{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:32px 24px;text-align:center;animation:slideUp .4s ease}
-.done-ring{width:120px;height:120px;margin:0 auto 20px;position:relative}
+.done-ring{width:120px;height:120px;margin:0 auto 18px;position:relative}
 .done-ring svg{transform:rotate(-90deg)}
 .done-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:26px;font-weight:800}
 .done-badge{display:inline-block;padding:6px 18px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:10px;font-family:'Syne',sans-serif}
-.done-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px}
-.done-sub{color:var(--muted);font-size:14px;margin-bottom:20px}
+.done-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:5px}
+.done-sub{color:var(--muted);font-size:14px;margin-bottom:18px}
 .done-acts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.btn-sec{padding:10px 20px;border:1px solid var(--border);background:var(--s2);color:var(--text);border-radius:12px;cursor:pointer;font-size:13px;font-weight:600;font-family:'Syne',sans-serif;transition:all .2s}
+.btn-sec{padding:10px 18px;border:1px solid var(--border);background:var(--s2);color:var(--text);border-radius:12px;cursor:pointer;font-size:13px;font-weight:600;font-family:'Syne',sans-serif;transition:all .2s}
 .btn-sec:hover{border-color:var(--accent);color:var(--accent)}
-.btn-pri{padding:10px 20px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:12px;cursor:pointer;font-size:13px;font-weight:700;font-family:'Syne',sans-serif}
+.btn-pri{padding:10px 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;border-radius:12px;cursor:pointer;font-size:13px;font-weight:700;font-family:'Syne',sans-serif}
 .btn-pri:hover{opacity:.85}
-.btn-warn{padding:10px 20px;background:rgba(244,63,94,.12);color:var(--red);border:1px solid rgba(244,63,94,.25);border-radius:12px;cursor:pointer;font-size:13px;font-weight:600;font-family:'Syne',sans-serif}
+.btn-warn{padding:10px 18px;background:rgba(244,63,94,.12);color:var(--red);border:1px solid rgba(244,63,94,.25);border-radius:12px;cursor:pointer;font-size:13px;font-weight:600;font-family:'Syne',sans-serif}
+
+/* TIMEUP */
+.timeup-card{background:var(--s1);border:1px solid rgba(244,63,94,.3);border-radius:20px;padding:36px 24px;text-align:center;animation:slideUp .4s ease}
 
 /* WELCOME */
 .welcome{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:40px;text-align:center}
@@ -155,14 +144,14 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .welcome-h{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px}
 .welcome-p{color:var(--muted);font-size:14px;line-height:1.7}
 
-/* MISSED TAB */
+/* MISSED */
 .missed-empty{background:var(--s1);border:1px solid var(--border);border-radius:20px;padding:40px;text-align:center;color:var(--muted)}
 .missed-list{display:flex;flex-direction:column;gap:8px}
-.missed-item{background:var(--s1);border:1px solid var(--border);border-radius:13px;padding:13px 15px;display:flex;align-items:flex-start;gap:11px;cursor:pointer;transition:border-color .2s}
+.missed-item{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:13px 15px;display:flex;align-items:flex-start;gap:11px;cursor:pointer;transition:border-color .2s}
 .missed-item:hover{border-color:var(--red)}
 .missed-q{font-size:14px;color:var(--muted);line-height:1.5}
 .missed-meta{font-size:11px;color:var(--muted2);margin-top:3px}
-.missed-actions{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.missed-actions{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
 
 /* TOAST */
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--s3);border:1px solid var(--border);border-radius:12px;padding:10px 20px;font-size:13px;color:var(--text);z-index:999;transition:transform .3s ease;white-space:nowrap}
@@ -171,7 +160,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 @media(max-width:500px){
   .stats{grid-template-columns:repeat(2,1fr)}
   .stat-n{font-size:20px}
-  .q-text{font-size:15px}
+  .q-text{font-size:14px}
   .qnav-dot{width:24px;height:24px;font-size:10px}
 }
 </style>
@@ -183,30 +172,23 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     <h1>O'rnatilgan Tizimlar Testi</h1>
     <p>150 savol · 3 mavzu · Vaqt chegarasi · Progress saqlanadi</p>
   </div>
-
   <div class="tabs">
     <div class="tab active" onclick="switchTab('test')" id="tab-test">📝 Test</div>
     <div class="tab" onclick="switchTab('missed')" id="tab-missed">❌ O'tilmaganlar<span class="tab-badge" id="missed-badge">0</span></div>
   </div>
-
   <div class="stats">
     <div class="stat"><div class="stat-n c-blue" id="sTotal">0</div><div class="stat-l">Jami</div></div>
     <div class="stat"><div class="stat-n c-green" id="sCorrect">0</div><div class="stat-l">To'g'ri</div></div>
     <div class="stat"><div class="stat-n c-red" id="sWrong">0</div><div class="stat-l">Noto'g'ri</div></div>
     <div class="stat"><div class="stat-n c-yellow" id="sPct">—</div><div class="stat-l">Natija</div></div>
   </div>
-
-  <!-- Countdown timer (shown when test active) -->
-  <div class="countdown-bar" id="cdBar" style="display:none">
-    <div style="flex:1">
-      <div style="display:flex;align-items:center;justify-content:space-between">
-        <div class="cd-left"><span class="cd-icon">⏳</span><span class="cd-label">Qolgan vaqt</span></div>
-        <div class="cd-time" id="cdDisplay">00:00</div>
-      </div>
-      <div class="cd-bar"><div class="cd-bar-fill" id="cdFill" style="width:100%"></div></div>
+  <div class="cd-wrap" id="cdWrap">
+    <div class="cd-row">
+      <div class="cd-lbl">⏳ Qolgan vaqt</div>
+      <div class="cd-time" id="cdTime">00:00</div>
     </div>
+    <div class="cd-bar"><div class="cd-fill" id="cdFill" style="width:100%"></div></div>
   </div>
-
   <div class="prog-wrap" id="progWrap" style="display:none">
     <div class="prog-top">
       <span class="prog-lbl" id="progLbl">—</span>
@@ -214,61 +196,40 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     </div>
     <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
   </div>
-
   <div class="mavzu-wrap">
     <div class="mavzu-lbl">Mavzu tanlash</div>
     <div class="mavzu-btns" id="mavzuBtns"></div>
   </div>
-
-  <!-- Question navigator -->
   <div class="qnav-wrap" id="qnavWrap" style="display:none">
     <div class="qnav-lbl">Savollar</div>
     <div class="qnav-dots" id="qnavDots"></div>
   </div>
-
   <div class="streak-wrap" id="streakWrap"></div>
-
   <div id="testArea">
     <div class="welcome">
       <div class="welcome-ico">🎓</div>
       <div class="welcome-h">Mavzu tanlang</div>
-      <div class="welcome-p">Mavzu tanlagach vaqt ajratasiz.<br>Har bir javob va savol aralashtirilgan chiqadi.<br>Pastdagi raqamlarga bosib savollar orasida erkin yurish mumkin.</div>
+      <div class="welcome-p">Mavzu tanlagach vaqt belgilaysiz.<br>Savol raqamlariga bosib, istalgan savolga o'tish mumkin.<br>Allaqachon javob berilgan savollarda faqat natija ko'rsatiladi.</div>
     </div>
   </div>
-
   <div id="missedArea" style="display:none"></div>
 </div>
 
-<!-- Time picker modal -->
-<div class="modal-overlay" id="timeModal" style="display:none" onclick="closeModalOutside(event)">
+<!-- Time Modal -->
+<div class="modal-overlay" id="timeModal" style="display:none" onclick="modalOutside(event)">
   <div class="modal">
     <h2>⏱️ Vaqtni tanlang</h2>
-    <p id="timeModalDesc">Bu mavzu uchun qancha vaqt kerak?<br>Vaqt tugasa test yopiladi va boshidan boshlanadi.</p>
+    <p id="timeModalDesc">Vaqt tugasa test yopiladi va boshidan boshlanadi.</p>
     <div class="time-options">
-      <div class="time-opt" onclick="pickTime(5)">
-        <span>5 daqiqa</span>
-        <span class="time-desc">Tez tekshirish</span>
-      </div>
-      <div class="time-opt" onclick="pickTime(10)">
-        <span>10 daqiqa</span>
-        <span class="time-desc">O'rtacha sur'at</span>
-      </div>
-      <div class="time-opt" onclick="pickTime(15)">
-        <span>15 daqiqa</span>
-        <span class="time-desc">Yaxshi o'ylash</span>
-      </div>
-      <div class="time-opt" onclick="pickTime(20)">
-        <span>20 daqiqa</span>
-        <span class="time-desc">Bemalol</span>
-      </div>
-      <div class="time-opt" onclick="pickTime(30)">
-        <span>30 daqiqa</span>
-        <span class="time-desc">Batafsil yondashuv</span>
-      </div>
+      <div class="time-opt" onclick="pickTime(5)"><span>5 daqiqa</span><span class="td">Tez tekshirish</span></div>
+      <div class="time-opt" onclick="pickTime(10)"><span>10 daqiqa</span><span class="td">O'rtacha sur'at</span></div>
+      <div class="time-opt" onclick="pickTime(15)"><span>15 daqiqa</span><span class="td">Yaxshi o'ylash</span></div>
+      <div class="time-opt" onclick="pickTime(20)"><span>20 daqiqa</span><span class="td">Bemalol</span></div>
+      <div class="time-opt" onclick="pickTime(30)"><span>30 daqiqa</span><span class="td">Batafsil yondashuv</span></div>
     </div>
-    <div class="custom-time">
+    <div class="custom-row">
       <input type="number" id="customMin" placeholder="Daqiqa" min="1" max="120">
-      <button onclick="pickCustomTime()">Tasdiqlash</button>
+      <button onclick="pickCustom()">OK</button>
     </div>
   </div>
 </div>
@@ -283,171 +244,172 @@ const MAVZULAR=[
   {id:3,name:"3-mavzu",full:"Sensor, Cloud, Avtomobil, Aqlli Tizimlar (101–150)"}
 ];
 
+// Full questions from xlsx — complete text
 const RAW=[
   {id:1,m:1,q:"UART qisqartmasining ma'nosi nima?",o:["Universal Asynchronous Receiver-Transmitter","Universal Analog Routing Technology","Unified Asynchronous Radio Transmission","Universal Asynchronous Router-Transceiver"],a:0},
-  {id:2,m:1,q:"UART protokoli sinxronmi yoki asinxronmi?",o:["Asinxron — alohida taymer signali talab qilinmaydi","Sinxron — taymer signali kerak bo'ladi","Sinxron — ma'lumotlar faqat bitta sim orqali uzatiladi","Asinxron — ma'lumotlar faqat parallel uzatiladi"],a:0},
-  {id:3,m:1,q:"Full-duplex UART aloqasi uchun kamida nechta ma'lumot liniyasi kerak (GND hisobsiz)?",o:["2 ta (TX va RX)","1 ta (faqat Data)","3 ta (TX, RX, CLK)","4 ta (MISO, MOSI, SCK, CS)"],a:0},
-  {id:4,m:1,q:"UART da \"Baud rate\" nima va ikki qurilmada qanday bo'lishi kerak?",o:["Ma'lumot uzatish tezligi, ikki qurilmada bir xil bo'lishi shart","Shifrlash darajasi, faqat bitta qurilmada sozlanadi","Xatoliklarni tekshirish algoritmi","Kuchlanish darajasi, har xil bo'lishi mumkin"],a:0},
-  {id:5,m:1,q:"UART ma'lumotlar paketi (frame) tarkibi qanday ketma-ketlikdan iborat?",o:["Start bit, ma'lumot bitlari, Paritet biti (ixtiyoriy), Stop bit","Faqat ma'lumot bitlari va sinxronlash signali","MAC manzil, IP manzil va ma'lumotlar","Qurilma ID, Register manzili va ma'lumotlar"],a:0},
-  {id:6,m:1,q:"SPI qisqartmasi nimani anglatadi?",o:["Serial Peripheral Interface","System Peripheral Interconnect","Synchronous Parallel Interface","Serial Port Interface"],a:0},
-  {id:7,m:1,q:"SPI qanday protokol va asosiy xususiyati nima?",o:["Sinxron — Master SCK signalini ishlab chiqaradi","Asinxron — maxsus takt signali kerak emas","Yarim-sinxron — taymer mustaqil ishlaydi","Asinxron — faqat start/stop bitlari orqali"],a:0},
-  {id:8,m:1,q:"SPI da Master dan Slave ga ma'lumot uzatish uchun qaysi liniya?",o:["MOSI (Master Out Slave In)","MISO (Master In Slave Out)","CS/SS (Chip Select)","SCK (Serial Clock)"],a:0},
-  {id:9,m:1,q:"CS (Chip Select) liniyasining asosiy vazifasi nima?",o:["Qaysi Slave qurilma bilan aloqa o'rnatilishini tanlash","Ma'lumot uzatish tezligini sozlash","Xatoliklarni tekshirish","Master ni quvvat bilan ta'minlash"],a:0},
-  {id:10,m:1,q:"SPI tarmog'ining ishlash arxitekturasi qanday?",o:["Bitta Master va bir nechta Slave arxitekturasi","Bir nechta Master faqat bitta Slave ni boshqaradi","Barcha qurilmalar teng huquqli (P2P)","Halqa (Ring) shaklida ulanadi"],a:0},
+  {id:2,m:1,q:"UART protokoli sinxronmi yoki asinxronmi va uning asosiy xususiyati nimada?",o:["Asinxron - ma'lumot uzatish uchun alohida taymer (clock) signali talab qilinmaydi","Sinxron - ma'lumot uzatish uchun alohida taymer (clock) signali kerak bo'ladi","Sinxron - ma'lumotlar faqat bitta sim orqali ikki tomonga uzatiladi","Asinxron - ma'lumotlar faqat parallel ravishda uzatiladi"],a:0},
+  {id:3,m:1,q:"Ikki qurilma o'rtasida ikki tomonlama (full-duplex) UART aloqasini o'rnatish uchun kamida nechta asosiy ma'lumot liniyasi (sim) kerak (GND ni hisobga olmaganda)?",o:["2 ta (TX - uzatish va RX - qabul qilish liniyalari)","1 ta (faqat Data liniyasi)","3 ta (TX, RX va CLK liniyalari)","4 ta (MISO, MOSI, SCK, CS liniyalari)"],a:0},
+  {id:4,m:1,q:"UART aloqasida \"Baud rate\" nima va u aloqa qilayotgan ikki qurilmada qanday bo'lishi kerak?",o:["Bu ma'lumot uzatish tezligi (sekundiga bitlar soni) bo'lib, har ikki qurilmada bir xil qilib sozlanishi shart","Bu ma'lumotlarni shifrlash darajasi bo'lib, faqat bitta qurilmada sozlanadi","Bu xatoliklarni tekshirish algoritmiga berilgan nom","Bu qurilmalarning kuchlanish darajasi bo'lib, har ikki qurilmada har xil bo'lishi mumkin"],a:0},
+  {id:5,m:1,q:"Odatda UART ma'lumotlar paketi (frame) tarkibi qanday ketma-ketlikdan iborat bo'ladi?",o:["Start bit, ma'lumot bitlari (Data bits), Paritet biti (Parity bit - ixtiyoriy) va Stop bit(lar)","Faqat ma'lumot bitlari (Data bits) va sinxronlash signali (Clock)","MAC manzil, IP manzil va ma'lumotlar","Qurilma ID raqami, Register manzili va ma'lumotlar"],a:0},
+  {id:6,m:1,q:"SPI qisqartmasi qanday ma'noni anglatadi?",o:["Serial Peripheral Interface","System Peripheral Interconnect","Synchronous Parallel Interface","Serial Port Interface"],a:0},
+  {id:7,m:1,q:"SPI qanday turdagi aloqa protokoli hisoblanadi va uning asosiy xususiyati nima?",o:["Sinxron — ma'lumotlar uzatilishini sinxronlash uchun Master (Bosh) qurilma SCK (Serial Clock) signalini ishlab chiqaradi","Asinxron — ma'lumot uzatish uchun maxsus takt (clock) signali kerak emas","Yarim-sinxron — taymer signali Master va Slave qurilmalarda mustaqil ravishda ishlaydi","Asinxron — ma'lumotlar faqat \"start\" va \"stop\" bitlari orqali boshqariladi"],a:0},
+  {id:8,m:1,q:"SPI interfeysida Master (Bosh) qurilmadan Slave (Tobe) qurilmaga ma'lumot uzatish uchun qaysi liniyadan foydalaniladi?",o:["MOSI (Master Out Slave In)","MISO (Master In Slave Out)","CS / SS (Chip Select/Slave Select)","SCK (Serial Clock)"],a:0},
+  {id:9,m:1,q:"CS (Chip Select) yoki SS (Slave Select) liniyasining asosiy vazifasi nima?",o:["SPI tarmog'ida aynan qaysi Slave qurilma bilan aloqa o'rnatilishini tanlash va uni faollashtirish","Ma'lumot uzatish tezligini (Baud rate) sozlash","Uzatilgan ma'lumotlarda xatolik bor-yo'qligini tekshirish","Master qurilmani quvvat bilan ta'minlash"],a:0},
+  {id:10,m:1,q:"SPI tarmog'ining ishlash arxitekturasi odatda qanday tuzilgan bo'ladi?",o:["Bitta Master qurilma va bitta yoki bir nechta Slave qurilmalar arxitekturasi asosida ishlaydi","Bir nechta Master qurilmalar faqat bitta Slave qurilmani boshqaradi","Barcha qurilmalar bitta tarmoqda teng huquqli (Peer-to-Peer) bo'lib ishlaydi","Qurilmalar bir-biri bilan faqat halqa (Ring) ko'rinishida ulanadi"],a:0},
   {id:11,m:1,q:"I2C qisqartmasining to'liq ma'nosi nima?",o:["Inter-Integrated Circuit","Internal-Internet Connection","Inter-Interface Computer","Integrated-Internal Chip"],a:0},
-  {id:12,m:1,q:"I2C protokoli nechta simdan foydalanadi?",o:["2 ta (SDA va SCL)","1 ta (faqat ma'lumot)","3 ta (MISO, MOSI, SCK)","4 ta (RX, TX, GND, VCC)"],a:0},
-  {id:13,m:1,q:"I2C da SDA va SCL ning vazifasi nima?",o:["SDA – ma'lumotlar, SCL – sinxronizatsiya liniyasi","SDA – qabul qilish, SCL – jo'natish","SDA – quvvat, SCL – yer (GND)","SDA – yoqish, SCL – o'chirish"],a:0},
-  {id:14,m:1,q:"I2C qanday arxitekturaga asoslangan?",o:["Master-Slave (Asosiy va tobe)","Peer-to-Peer (Teng huquqli)","Ring (Halqa)","Mesh (To'rsimon)"],a:0},
-  {id:15,m:1,q:"I2C protokoli asosan qayerda qo'llaniladi?",o:["Bitta plata ichida mikrokontroller va modullar o'rtasida","Video/audio signallarni uzoq masofaga uzatish","Katta hajmdagi fayllarni tezkor ko'chirish","Kompyuterlarni global tarmoqqa ulash"],a:0},
-  {id:16,m:1,q:"CAN qisqartmasi nimani anglatadi?",o:["Controller Area Network","Computer Area Network","Central Analog Node","Control and Navigation"],a:0},
-  {id:17,m:1,q:"CAN shina tizimi asosan qaysi sohalarda qo'llaniladi?",o:["Avtomobil sanoati va sanoat avtomatizatsiyasida","Uy internet tarmoqlarida","Veb-serverlar o'rtasida","Smartfonlar o'rtasidagi aloqada"],a:0},
-  {id:18,m:1,q:"CAN da differensial signal (CAN High/Low) ishlatilishining sababi nima?",o:["Tashqi elektromagnit xalaqitlardan himoya qilish","Qurilmalarni yuqori kuchlanishli elektr bilan ta'minlash","Ma'lumotlarni apparat darajasida shifrlash","Biri RX, ikkinchisi TX bo'lganligi"],a:0},
-  {id:19,m:1,q:"CAN da xabarlarning ustuvorligi (prioriteti) qanday aniqlanadi?",o:["Eng kichik ID ga ega xabar eng yuqori ustuvorlikka ega","Eng katta ID birinchi uzatiladi","FIFO tartibida uzatiladi","Maxsus Master hal qiladi"],a:0},
-  {id:20,m:1,q:"CAN tarmog'ining topologiyasi va Master qurilmasi bormi?",o:["Bus topology, qat'iy Master yo'q (Multi-master)","Qat'iy Master-Slave arxitekturasi","Yulduz shaklida, markaziy router boshqaradi","Halqa shaklida ketma-ket ulanadi"],a:0},
-  {id:21,m:1,q:"USB qisqartmasi nimani anglatadi?",o:["Universal Serial Bus","Unified System Bus","Universal Synchronous Board","Utility Serial Bandwidth"],a:0},
-  {id:22,m:1,q:"USB tarmog'ining topologiyasi va boshqaruvchisi?",o:["Tiered Star (Yulduz), faqat bitta Host boshqaradi","Halqa topologiyasi, ketma-ket zanjir","Peer-to-Peer, har kim boshqarishi mumkin","Mesh, to'g'ridan-to'g'ri ulanadi"],a:0},
-  {id:23,m:1,q:"Standart USB 1.x/2.0 da quvvatlantirish uchun VBUS kuchlanishi qancha?",o:["5V","3.3V","12V","24V"],a:0},
-  {id:24,m:1,q:"USB 2.0 ma'lumot uzatish liniyalari qanday nomlanadi?",o:["D+ va D− (differensial signal)","SCL va SDA (sinxron takt va ma'lumot)","RX va TX (alohida liniyalar)","MISO va MOSI (parallel liniyalar)"],a:0},
-  {id:25,m:1,q:"USB \"Hot-swapping\" xususiyati nimani anglatadi?",o:["Kompyuterni o'chirib-yoqmasdan USB qurilma ulash/uzish","Qurilma qizib ketganda avtomatik o'chishi","Tarmoq tezligini avtomatik oshirish","Ma'lumotlarni shifrlangan holda uzatish"],a:0},
-  {id:26,m:1,q:"OBD-II (On-Board Diagnostics) porti nima uchun ishlatiladi?",o:["Avtomobil xatolarini o'qish va diagnostika qilish","Video uzatish uchun","Internet ulanishi uchun","Quvvat ta'minoti uchun"],a:0},
-  {id:27,m:1,q:"CAN da bir qurilma 'dominant' bit yuborganda nima bo'ladi?",o:["Dominant bit shinada g'alaba qiladi (0 > 1)","Recessive bit ustun bo'ladi","Ikkalasi o'chiriladi","Master qaror qiladi"],a:0},
-  {id:28,m:1,q:"I2C da pull-up rezistorlarning vazifasi nima?",o:["Liniyani yuqori mantiqiy holatga (1) ko'tarish","Liniyani past holatda ushlab turish","Shovqinni filtrlash","Quvvat tejash"],a:0},
-  {id:29,m:1,q:"SPI protokolida nechta asosiy liniya mavjud?",o:["4 ta (MOSI, MISO, SCK, CS)","2 ta (TX, RX)","3 ta (SDA, SCL, GND)","1 ta (Data)"],a:0},
-  {id:30,m:1,q:"UART da paritet biti nima uchun ishlatiladi?",o:["Uzatilgan ma'lumotdagi xatolikni aniqlash uchun","Ma'lumotni shifrlash uchun","Tezlikni oshirish uchun","Start biti sifatida"],a:0},
-  {id:31,m:1,q:"I2C da bitta shinaga nechta qurilma ulanishi mumkin?",o:["128 tagacha (7-bit manzil bilan)","Faqat 1 ta","Maksimal 4 ta","Cheklanmagan"],a:0},
-  {id:32,m:1,q:"USB da Endpoint nima?",o:["Qurilma ichida ma'lumot oqimi uchun mantiqiy kanal","Fizik USB port","USB kabeli uchi","Quvvat manbai pinlari"],a:0},
-  {id:33,m:1,q:"CAN da \"Bus-off\" holati nimani anglatadi?",o:["Qurilma juda ko'p xato ketgandan keyin shinadan uzilishi","Barcha qurilmalar o'chirilishi","Tezlik tushib ketishi","Signal kuchi zaiflashishi"],a:0},
-  {id:34,m:1,q:"SPI da CPOL va CPHA parametrlari nima uchun kerak?",o:["Takt signalining qutblanishi va fazasini sozlash uchun","Ma'lumot tezligini oshirish uchun","Slave qurilmani tanlash uchun","Xatolikni aniqlash uchun"],a:0},
-  {id:35,m:1,q:"UART da stop bit nechtadan bo'lishi mumkin?",o:["1, 1.5 yoki 2 ta","Faqat 1 ta","Faqat 2 ta","0 ta (stop bit bo'lmaydi)"],a:0},
-  {id:36,m:1,q:"I2C da SCL chastotasi odatda qancha bo'ladi (standart rejim)?",o:["100 kHz","1 MHz","10 MHz","1 kHz"],a:0},
-  {id:37,m:1,q:"USB 3.0 ning ma'lumot uzatish tezligi qancha?",o:["5 Gbit/s (SuperSpeed)","480 Mbit/s","12 Mbit/s","1.5 Mbit/s"],a:0},
-  {id:38,m:1,q:"CAN da bir xabarning maksimal ma'lumot hajmi qancha?",o:["8 bayt (klassik CAN)","64 bayt","256 bayt","1 KB"],a:0},
-  {id:39,m:1,q:"SPI ning I2C ga nisbatan asosiy afzalligi nima?",o:["Tezroq ishlaydi (to'liq duplex, alohida CS liniyasi)","Kamroq sim talab qiladi","Ko'proq qurilmani qo'llab-quvvatlaydi","Masofasi uzunroq"],a:0},
-  {id:40,m:1,q:"UART da RS-232 kuchlanish darajalari qanday?",o:["+3V/+15V = mantiqiy 0, −3V/−15V = mantiqiy 1","0V = 0, 5V = 1","0V = 1, 3.3V = 0","±5V = 0, 0V = 1"],a:0},
-  {id:41,m:1,q:"I2C da master qurilma qanday slave ni tanlaydi?",o:["7-bit yoki 10-bit manzil orqali","CS liniyasi orqali","Alohida Address pin orqali","Broadcast yordamida"],a:0},
-  {id:42,m:1,q:"USB OTG (On-The-Go) texnologiyasi nimaga imkon beradi?",o:["Mobil qurilma ham Host, ham Device bo'la olishiga","Faqat quvvat uzatishga","Simsiz USB aloqaga","USB 4.0 tezligiga chiqishga"],a:0},
-  {id:43,m:1,q:"CAN da terminatsiya rezistori (120 Ohm) nima uchun o'rnatiladi?",o:["Signal aks etishini (reflection) oldini olish uchun","Shovqinni kuchaytirish uchun","Tezlikni pasaytirish uchun","Qurilmalarni himoyalash uchun"],a:0},
-  {id:44,m:1,q:"SPI da bir nechta Slave bo'lganda qanday yondashuv qo'llaniladi?",o:["Har bir Slave uchun alohida CS liniyasi","Slave larni ketma-ket zanjirga ulash","Broadcast rejimi","I2C manzillash tizimi"],a:0},
-  {id:45,m:1,q:"UART da \"flow control\" nima uchun kerak?",o:["Qabul qiluvchi qurilmaning buferi to'lib qolmasligini ta'minlash","Tezlikni oshirish","Ma'lumotni shifrlash","Xatolikni tuzatish"],a:0},
-  {id:46,m:1,q:"I2C da \"clock stretching\" nima?",o:["Slave SCL ni past ushlab, Master ni kutish uchun majburlashi","Master taktni sekinlashtirishi","Ikki master o'rtasida sinxronlash","Shovqindan himoya"],a:0},
-  {id:47,m:1,q:"USB da \"enumeration\" jarayoni nima?",o:["Host qurilmani aniqlashi, drayverini yuklab sozlashi","Qurilmani quvvat bilan ta'minlash","Ma'lumot uzatishni boshlash","Qurilmani o'chirish"],a:0},
-  {id:48,m:1,q:"CAN-FD ning klassik CAN dan farqi nima?",o:["Katta hajmdagi ma'lumot (64 bayt) va yuqori tezlik (8 Mbit/s)","Faqat avtomobillarda ishlaydi","Differensial signal ishlatmaydi","Wireless orqali uzatadi"],a:0},
-  {id:49,m:1,q:"SPI da \"daisy chain\" (zanjir) ulash nima?",o:["Slave lar MOSI-MISO orqali ketma-ket ulanadi, bitta CS","Barcha Slave lar parallel ulanadi","Master lar zanjir bo'lib ishlaydi","Rezerv ulanish usuli"],a:0},
-  {id:50,m:1,q:"UART, SPI va I2C dan qaysi biri eng uzoq masofaga ma'lumot yuborish uchun mo'ljallangan emas?",o:["Uchalasi ham qisqa masofali (board ichida) protokollar","UART — uzoq masofada ishlaydi","SPI — eng uzoq masofali","I2C — global tarmoq uchun"],a:0},
-  // Mavzu 2: 51-100
-  {id:51,m:2,q:"Bluetooth orqali bir nechta qurilmalar ulanganda hosil bo'ladigan kichik tarmoq nomi?",o:["Piconet (Pikotarmoq)","Ethernet","Intranet","Subnet"],a:0},
-  {id:52,m:2,q:"Bluetooth da qurilmalar qanday rollar bilan ishlaydi?",o:["Master (Boshqaruvchi) va Slave (Tobe)","Router va Switch","Faqat Peer-to-Peer","Faqat ikkita Master"],a:0},
-  {id:53,m:2,q:"BLE (Bluetooth Low Energy) qanday qurilmalar uchun mo'ljallangan?",o:["Aqlli soatlar, fitnes datchiklar, IoT qurilmalari","Faqat smartfonlar","Katta hajmdagi fayl uzatish uchun","Faqat kompyuterlar"],a:0},
-  {id:54,m:2,q:"Ikki Bluetooth qurilmani birinchi marta ulash jarayoni qanday ataladi?",o:["Pairing (Juftlash/Bog'lash)","Broadcasting","Handshaking","Ping"],a:0},
-  {id:55,m:2,q:"Standart Class 2 Bluetooth uchun barqaror ishlash masofasi qancha?",o:["Taxminan 10 metr","1-2 metr","100 metr","1 kilometr"],a:0},
-  {id:56,m:2,q:"Wi-Fi da IoT qurilmalarini internet orqali markaziy server bilan bog'lash uchun qaysi protokol qo'llaniladi?",o:["MQTT (Message Queuing Telemetry Transport)","FTP","POP3","SSH"],a:0},
-  {id:57,m:2,q:"Wi-Fi xavfsizligida hozir qaysi standart eng ishonchli hisoblanadi?",o:["WPA2 yoki WPA3","WEP","MAC filtrlash","Yashirin SSID"],a:0},
-  {id:58,m:2,q:"Batareyadan ishlaydigan Wi-Fi asosidagi qurilmalarning eng katta muammosi nima?",o:["Wi-Fi modulining energiya sarfi yuqori ekanligi","Faqat 1-2 metr masofada ishlashi","Bluetooth dan sekinligi","Bir vaqtda faqat bitta qurilma"],a:0},
-  {id:59,m:2,q:"Wi-Fi da Infrastructure rejimi nima?",o:["Qurilmalar Access Point orqali ulanishi","Qurilmalar to'g'ridan-to'g'ri ulanishi (Ad-hoc)","Halqa topologiyasi","Faqat bir yo'nalishda uzatish"],a:0},
-  {id:60,m:2,q:"O'rnatilgan tizimlarda Wi-Fi uchun eng mashhur arzon modullar qaysilar?",o:["ESP8266 yoki ESP32","ATmega328P","PIC16F877A","555 Taymer"],a:0},
-  {id:61,m:2,q:"Arduino da LED ulangan pinni chiquvchi sifatida sozlash uchun qaysi funksiya?",o:["pinMode()","digitalWrite()","analogRead()","delay()"],a:0},
-  {id:62,m:2,q:"LED ni yoqish uchun dasturda qanday buyruq yoziladi (LED 13-pinga ulangan)?",o:["digitalWrite(13, HIGH);","analogWrite(13, ON);","digitalRead(13, HIGH);","pinMode(13, 1);"],a:0},
-  {id:63,m:2,q:"LED ning yorug'lik darajasini o'zgartirish uchun qaysi texnologiya?",o:["PWM (Pulse Width Modulation) va analogWrite()","ADC va digitalWrite()","UART va Serial.print()","SPI va shiftOut()"],a:0},
-  {id:64,m:2,q:"delay(1000); buyrug'i dasturni qancha vaqtga to'xtatadi?",o:["1 soniyaga (1000 ms)","1 daqiqaga","1000 soniyaga","1 millisoniyaga"],a:0},
-  {id:65,m:2,q:"Arduino ga LED ulayotganda kuyib qolmasligi uchun nima qo'shish kerak?",o:["Rezistor (220-330 Om)","Tranzistor","Kondensator","Drossel"],a:0},
-  {id:66,m:2,q:"Ham harorat, ham namlikni o'lchaydigan mashhur arzon datchik?",o:["DHT11 yoki DHT22","LDR (Foytorezistor)","HC-SR04 (Ultratovush)","PIR (Harakat)"],a:0},
-  {id:67,m:2,q:"Wi-Fi orqali serverga ma'lumot yuborish uchun eng qulay platforma?",o:["NodeMCU (ESP8266) yoki ESP32","Arduino Uno","Arduino Mega","ATtiny85"],a:0},
-  {id:68,m:2,q:"Aqlli harorat o'lchagich uchun IoT protokoli qaysi?",o:["MQTT","SMTP","FTP","SSH"],a:0},
-  {id:69,m:2,q:"Qurilmada haroratni ko'rsatish uchun I2C orqali ulanadigan ekran?",o:["OLED display 128x64 (0.96\")","Katta LCD televizor","7 segmentli mexanik soat","VGA monitor"],a:0},
-  {id:70,m:2,q:"DS18B20 datchigi uchun Data liniyasiga qanday komponent kerak?",o:["4.7k Om Pull-up rezistor","100 uF kondensator","NPN tranzistor","5V rele"],a:0},
-  {id:71,m:2,q:"Aqlli uy tizimida turli qurilmalarni bitta tarmoqqa birlashtiruvchi markaziy qurilma nima?",o:["Smart Hub (Markaziy boshqaruvchi)","Smart TV","Wi-Fi Router","Bluetooth kuchaytirgich"],a:0},
-  {id:72,m:2,q:"Batareyadan ishlaydigan datchiklar kam energiya sarflash uchun qaysi protokollardan foydalanadi?",o:["Zigbee va Z-Wave","HTTP va FTP","5G va LTE","NFC va RFID"],a:0},
-  {id:73,m:2,q:"Aqlli uy da 'Avtomatlashtirish' (Scenario) atamasi nimani anglatadi?",o:["Shart bajarilganda tizimning avtomatik amallarni bajarishi","Faqat mobil ilova orqali boshqarish","3D arxitektura loyihasi","Faqat ovoz tanib ishlash"],a:0},
-  {id:74,m:2,q:"Ruxsatsiz kirishni aniqlash uchun aqlli uy xavfsizlik tizimida qaysi datchiklar?",o:["PIR (Harakat) va Gerkon (eshik/deraza magnit)","DS18B20 (Harorat) va CO2","LDR (Yorug'lik) va tuproq namligi","HC-SR04 (Ultratovush)"],a:0},
-  {id:75,m:2,q:"Avtomatik sug'orish tizimida o'simlik suvga muhtojligini aniqlash uchun?",o:["Tuproq namligi datchigi (Soil Moisture)","DHT11 (Harorat va namlik)","HC-SR04 (Ultratovush)","LDR (Yorug'lik)"],a:0},
-  {id:76,m:2,q:"Mikrokontrollerdan kelgan buyruqqa asosan suv oqimini ochib-yopuvchi qurilma?",o:["Solenoid valve (Elektromagnit klapan) yoki suv pompasi","Stepper motor","LED","Buzzer"],a:0},
-  {id:77,m:2,q:"Masofadan boshqariluvchi robot uchun DC motor bilan qaysi modul birgalikda ishlatiladi?",o:["Motor drayveri (L298N)","Servo motor va rele","Stepper va Wi-Fi router","Pyezodinamik va tranzistor"],a:0},
-  {id:78,m:2,q:"Robotni smartfon orqali ~10 metr boshqarish uchun eng arzon simsiz modul?",o:["Bluetooth HC-05 yoki HC-06","GSM SIM800L","NRF24L01","GPS NEO-6M"],a:0},
-  {id:79,m:2,q:"L298N motor drayveri nima uchun zarur?",o:["Arduino pinlari motor uchun yetarli tok bermaydi, yo'nalishni o'zgartirish uchun","Motorlarni internetga ulash","Og'irlik muvozanati","Xatolarni to'g'rilash"],a:0},
-  {id:80,m:2,q:"Robot tezligini silliq boshqarish uchun qanday signal yuboriladi?",o:["PWM (Pulse Width Modulation)","I2C","UART","Analog video"],a:0},
-  {id:81,m:2,q:"Nima uchun o'rnatilgan tizimlarda C/C++ eng ko'p qo'llaniladi?",o:["Xotira va registrlarni to'g'ridan-to'g'ri boshqarish va yuqori samaradorlik","Garbage collection xususiyati","Sintaksisi eng oson","Faqat bulutli serverlarda ishlaydi"],a:0},
-  {id:82,m:2,q:"Mikrokontroller registrida bitni '1' ga o'tkazish uchun qaysi operator?",o:["| (Bitwise OR)","& (Bitwise AND)","~ (Bitwise NOT)","^ (Bitwise XOR)"],a:0},
-  {id:83,m:2,q:"Kompilyatsiya qilingan asosiy dastur kodi qaysi xotirada saqlanadi?",o:["Flash (ROM) xotirasida","EEPROM da","RAM da","Oziqlantirish blokida"],a:0},
-  {id:84,m:2,q:"volatile kalit so'zi C/C++ da nima uchun kerak?",o:["Kompilyatorni o'zgaruvchini optimallashtirishdan to'xtatish (apparat o'zgartirishi mumkin)","O'zgaruvchini konstantaga aylantirish","Eng kam joy egallaydigan format","Tashqi xotirada saqlash"],a:0},
-  {id:85,m:2,q:"main() funksiyasi nima uchun cheksiz tsikl ichida yoziladi?",o:["OS yo'q, dastur tugasa mikrokontroller qotib qoladi","Xato — qizdirib yuboradi","Datchik ma'lumot olguncha kutish","Uyqu rejimiga o'tkazish"],a:0},
-  {id:86,m:2,q:"delay() o'rniga millis() funksiyasini ishlatishning afzalligi?",o:["Kutish davomida boshqa vazifalarni (datchiklar o'qish) ham bajarish mumkin","Vaqt aniqroq","Energiya tejaladi","Kod qisqaradi"],a:0},
-  {id:87,m:2,q:"Aqlli svetofordagi induktiv halqa datchigi nima uchun ishlatiladi?",o:["Asfalt ostida mashinalar borligini aniqlash","Haroratni o'lchash","Yomg'irni sezish","Yoritishni boshqarish"],a:0},
-  {id:88,m:2,q:"Aqlli svetofor tizimida tez yordam mashinasiga ustuvorlik qanday beriladi?",o:["V2X radioaloqa, GPS yoki ovoz signallarini aniqlash orqali yashil chiroq yoqish","Barcha chiroqlarni o'chirib sariq qilish","Eng tez mashinani aniqlab ruxsat berish","Faqat tungi vaqtda"],a:0},
-  {id:89,m:2,q:"Arduino svetofor prototipida delay() o'rniga to'g'ri yondashuv?",o:["millis() funksiyasidan foydalanib asinxron kod yozish","Faqat setup() da aylantirish","delay() ni ko'p marta ishlatish","Reset tugmasini bosish"],a:0},
-  {id:90,m:2,q:"Robot qo'lini aniq burchakda (45 gradus) burish uchun nima kerak?",o:["Servo motor","DC motor","LED","Rele"],a:0},
-  {id:91,m:2,q:"Bulutli va Mahalliy aqlli uy tizimlari o'rtasidagi farq?",o:["Bulutli uzoqdagi serverga bog'liq, mahalliy uyda internetsiz ishlaydi","Mahalliy smartfondan boshqarib bo'lmaydi","Bulutli faqat sim orqali","Bulutli internetsiz ham ishlaydi"],a:0},
-  {id:92,m:2,q:"IoT (Internet of Things) tushunchasi nimani anglatadi?",o:["Jismoniy qurilmalar va datchiklarning internet orqali ma'lumot almashishi","Faqat kompyuter va smartfonlarni ulash","Antivirus dasturi","Lokal sanoat tizimi"],a:0},
-  {id:93,m:2,q:"IoT arxitekturasining qaysi qatlami datchikdan ma'lumot yig'adi?",o:["Perception (Sensor) layer","Network layer","Processing layer","Application layer"],a:0},
-  {id:94,m:2,q:"IoT da Tarmoq qatlami (Network layer) ning vazifasi?",o:["Sensorlardan ma'lumotlarni bulutga Wi-Fi/Bluetooth/5G orqali uzatish","Barcha qurilmalarni elektr bilan ta'minlash","Ma'lumotlarni faqat grafik ko'rsatish","Keraksiz ma'lumotlarni o'chirish"],a:0},
-  {id:95,m:2,q:"IoT uchun maxsus yengil, kam energiyali protokol?",o:["MQTT","FTP","HTTP","POP3"],a:0},
-  {id:96,m:2,q:"Katta IoT tizimlarida Big Data ni saqlash va tahlil qilish qayerda?",o:["Bulutli platformalarda (Cloud) yoki Edge Computing markazlarida","Smartfon xotirasida","Har bir sensor ichida","Uy routerida"],a:0},
-  {id:97,m:2,q:"Simsiz Sensor Tarmoqlari (WSN) deganda nima tushuniladi?",o:["Muhitni kuzatib ma'lumotlarni markazga uzatuvchi tarqatilgan datchiklar to'plami","Simli internet tizimi","5G tayanch stansiyalari","Harbiy yopiq protokol"],a:0},
-  {id:98,m:2,q:"Bitta sensor tuguni (Sensor node) qanday asosiy qismlardan iborat?",o:["Datchik, mikrokontroller, radio modul, batareya","Datchik, monitor, klaviatura, router","Faqat datchik va HDD","Datchik va 220V ulagich"],a:0},
-  {id:99,m:2,q:"Sensor tarmoqlarida eng ishonchli topologiya (bitta tugun o'chsa ham ishlaydi)?",o:["Mesh (To'r)","Star (Yulduz)","Bus (Chiziqli)","Ring (Halqa)"],a:0},
-  {id:100,m:2,q:"Sensor tarmoqlarida Gateway (Shlyuz) ning vazifasi?",o:["Mahalliy datchiklar tarmog'idan ma'lumot yig'ib internetga o'tkazuvchi ko'prik","Xatolarni va viruslarni tozalash","Ma'lumotlarni o'chirish","Sensorlarni batareyasiz ishlashini ta'minlash"],a:0},
-  // Mavzu 3: 101-150
-  {id:101,m:3,q:"Uzoq hududlardagi simsiz sensor tarmoqlarining eng katta muammosi?",o:["Batareya cheklanganligi — energiyani maksimal tejash muammosi","IP manzillar yetishmasligi","Sensorlar juda og'ir bo'lishi","Kuchli kompyuter kerakligi"],a:0},
-  {id:102,m:3,q:"Bulutli texnologiyalarning IoT tizimidagi asosiy vazifasi?",o:["Qurilmalardan kelgan ma'lumotlarni markazlashgan saqlash, qayta ishlash, tahlil","Mikrokontrollerlarni elektr bilan ta'minlash","Jismoniy datchiklardan voz kechish","Wi-Fi router vazifasi"],a:0},
-  {id:103,m:3,q:"O'rnatilgan tizimlardan bulutga ma'lumot yuborish uchun eng yengil protokol?",o:["MQTT","FTP","HTTP","SMTP"],a:0},
-  {id:104,m:3,q:"\"Edge Computing\" atamasi nimani anglatadi?",o:["Ma'lumotni bulutga yubormasdan mahalliy qurilmada qayta ishlash (kechikishni kamaytirish)","Barcha ma'lumotlarni to'g'ridan-to'g'ri bulutga yuborish","Faqat smartfonlar uchun xotira","Datchiklarni bino chekkasiga o'rnatish"],a:0},
-  {id:105,m:3,q:"IoT ma'lumotlarini boshqarish uchun mashhur bulutli platforma?",o:["AWS IoT Core yoki Google Cloud IoT","Adobe Illustrator","Microsoft Excel","Kali Linux"],a:0},
-  {id:106,m:3,q:"O'rnatilgan tizimlarda xavfsizlik joriy etishdagi eng asosiy qiyinchilik?",o:["Xotira, hisoblash quvvati va energiya cheklanganligi sababli murakkab kriptografiya qiyinligi","Internetga umuman ulanmaslik","Xakerlar qiziqmasligi","Ortiqcha RAM mavjudligi"],a:0},
-  {id:107,m:3,q:"Qurilma proshivkasini masofadan simsiz yangilash texnologiyasi?",o:["FOTA (Firmware Over-The-Air)","DDoS","SQL Injection","JTAG Debugging"],a:0},
-  {id:108,m:3,q:"Kriptografik kalitlarni apparat darajasida saqlash uchun maxsus chip?",o:["TPM (Trusted Platform Module) yoki Secure Element","ADC (Analog-to-Digital Converter)","PWM kontrolleri","HC-SR04"],a:0},
-  {id:109,m:3,q:"Qurilma quvvat sarfini o'lchab maxfiy kalitlarni o'g'irlash hujumi turi?",o:["Yon-kanal hujumlari (Side-Channel Attacks)","Kross-sayt skripting (XSS)","Phishing","Man-in-the-Middle"],a:0},
-  {id:110,m:3,q:"Qurilma yoqilganda faqat tasdiqlangan proshivkani ishga tushiruvchi mexanizm?",o:["Secure Boot (Xavfsiz yuklanish)","Fast Boot","Safe Mode","Auto-connect"],a:0},
-  {id:111,m:3,q:"Zamonaviy avtomobillarda dvigatel va tormozni boshqaruvchi asosiy elektron modul?",o:["ECU (Electronic Control Unit)","CPU (Central Processing Unit)","GPU","SSD"],a:0},
-  {id:112,m:3,q:"Avtomobil ichidagi ECU va datchiklar o'zaro qaysi protokol orqali bog'lanadi?",o:["CAN (Controller Area Network)","HTTP","SPI","FTP"],a:0},
-  {id:113,m:3,q:"Tormoz tizimini bloklanishdan asrovchi va sirpanchiqda xavfsiz to'xtashga yordam beruvchi tizim?",o:["ABS (Anti-lock Braking System)","GPS","USB","NFS"],a:0},
-  {id:114,m:3,q:"Airbag yoki ABS kabi hayotiy tizimlarda RTOS ishlatilishining sababi?",o:["Ma'lumotlarni qat'iy vaqt oralig'ida (millisoniyada) kafolatli qayta ishlash","3D grafik interface","Bepul ochiq kodli","Energiya sarflamasligi"],a:0},
-  {id:115,m:3,q:"Avtomobil nosozliklarini o'qish va diagnostika uchun universal port?",o:["OBD-II porti","USB Type-C","HDMI","Ethernet"],a:0},
-  {id:116,m:3,q:"\"Aqlli shahar\" (Smart City) ning asosiy maqsadi?",o:["IoT va AKT yordamida shahar infratuzilmasini samarali boshqarish","Barcha avtomobillarni taqiqlash","Osmono'par binolar qurish","Barcha xizmatlarni robotlarga berish"],a:0},
-  {id:117,m:3,q:"Aqlli shaharda chiqindi qutilarini aqlli boshqarish qanday ishlaydi?",o:["To'lish datchiklari o'rnatiladi, mashinalar faqat to'lgan qutilarni yig'adi","Har soatda tozalanadi","Okeanga oqiziladi","Faqat insonlar saralaydi"],a:0},
-  {id:118,m:3,q:"Aqlli shahardagi kamera va svetoforlardan kelgan Big Data qayerda tahlil qilinadi?",o:["Markazlashtirilgan bulutli serverlarda va Backend bazalarida","Datchiklar ichidagi MicroSD da","Aholining smartfonlarida","Hokimlikdagi oddiy kompyuterlarda"],a:0},
-  {id:119,m:3,q:"\"Aqlli avtoturargoh\" (Smart Parking) qanday ishlaydi?",o:["Datchiklar bo'sh joylarni aniqlab, haydovchilarga mobil ilova orqali ko'rsatadi","Mashinalarni bir-birining ustiga ko'taradi","Qimmatbaho mashinalarga bepul joy","Avtomashinalarni yuvadi"],a:0},
-  {id:120,m:3,q:"Aqlli shahar bo'ylab kam quvvatli datchiklar uchun qaysi tarmoq texnologiyalari?",o:["LoRaWAN, NB-IoT va 5G","Faqat Wi-Fi","USB va HDMI","Bluetooth va infraqizil"],a:0},
-  {id:121,m:3,q:"Avtomatik sug'orish tizimining an'anaviy sug'orishdan afzalligi?",o:["Suv tejash va inson aralashuvisiz optimal namlik","Kimyoviy tarzda o'simlikni tezlashtirish","Faqat tunda ishlash","Mineral elementlarni tahlil qilish"],a:0},
-  {id:122,m:3,q:"IoT sug'orish tizimi ob-havo prognozidan qanday foydalanadi?",o:["Yomg'ir kutilsa sug'orishni bekor qiladi","Musiqa qo'yadi","Suv bosimini o'zgartiradi","Boshqa qurilmalar sarfiga qarab"],a:0},
-  {id:123,m:3,q:"Tuproq namligi datchigi signalini o'qib pompani yoqishni hal qiluvchi 'miya'?",o:["Arduino, ESP yoki mikrokontroller","LCD displey","Quvvat bloki","Wi-Fi router"],a:0},
-  {id:124,m:3,q:"Aqlli svetofor nima bilan farq qiladi oddiy svetofordan?",o:["Tirbandlikni tahlil qilib chiroqlar vaqtini avtomatik o'zgartiradi","Quyosh energiyasida ishlaydi","Faqat piyodalar tugma bosganda","LED ishlatadi"],a:0},
-  {id:125,m:3,q:"Aqlli shahar svetoforlarini yagona serverga bog'lash uchun qanday texnologiyalar?",o:["4G/5G, tolali optik internet yoki LoRaWAN","I2C yoki SPI","BLE va radio","Infraqizil"],a:0},
-  {id:126,m:3,q:"Masofadan boshqariluvchi robot g'ildiraklari uchun asosiy qurilmalar?",o:["DC motor va Motor drayveri (L298N)","Servo motor va rele","Stepper va router","Buzzer va tranzistor"],a:0},
-  {id:127,m:3,q:"Robot uchun optimal quvvat ta'minoti qanday tashkil etiladi?",o:["Motorlar uchun alohida kuchliroq batareya (kuchlanish tushib mikrokontrollerni o'chirishi mumkin)","Barcha elektronikani bitta 9V dan","Faqat quyosh paneli","Motorlarga quvvat bermaslik"],a:0},
-  {id:128,m:3,q:"IoT arxitekturasida 3-qatlam (Processing layer) nima qiladi?",o:["Ma'lumotni tahlil qiladi va saqlaydi","Sensordan o'qiydi","Elektr boshqaradi","Jismoniy himoya"],a:0},
-  {id:129,m:3,q:"Sensor tarmoqlarida Gateway ning vazifasi nima?",o:["Mahalliy datchik tarmog'idan ma'lumot yig'ib internetga o'tkazuvchi ko'prik","Virus tozalash","Ma'lumot o'chirish","Sensorlarni batareyasiz ishlashini ta'minlash"],a:0},
-  {id:130,m:3,q:"O'rnatilgan tizimlarda \"Watchdog Timer\" nima uchun kerak?",o:["Dastur qotib qolsa tizimni qayta yuklash (reset) uchun","Vaqtni ko'rsatish","Budilnik","Ekran yorug'ligi"],a:0},
-  {id:131,m:3,q:"Bulutli platformalarda IoT Dashboard nima?",o:["Qurilmadan kelgan ma'lumotlarni grafik ko'rsatuvchi panel","Qurilma korpusi","Batareya zaryadlagich","Internet kabeli"],a:0},
-  {id:132,m:3,q:"Mikrokontroller dasturlashda volatile kalit so'zi nima uchun?",o:["Kompilyatorni o'zgaruvchini optimallashtirishdan to'xtatish","Xotirani tejash","Tezlashtirish","O'zgarmas qilish"],a:0},
-  {id:133,m:3,q:"L298N moduli robototexnikada nima uchun ishlatiladi?",o:["DC motorlar yo'nalishi va tezligini boshqarish","Wi-Fi ulanish","Masofani o'lchash","Ovoz yozish"],a:0},
-  {id:134,m:3,q:"HC-SR04 ultratovush datchigi masofani qanday aniqlaydi?",o:["Tovush to'lqinining borib-kelish vaqti orqali","Yorug'lik tezligi","Magnit maydoni","Ranglarni farqlash"],a:0},
-  {id:135,m:3,q:"Aqlli uy da xonada odam borligini aniqlovchi datchik?",o:["PIR sensor","Namlik sensor","Gaz sensor","Bosim sensor"],a:0},
-  {id:136,m:3,q:"IoT tizimida ma'lumotlar xavfsizligi uchun shifrlash standarti?",o:["AES-128 / AES-256","MP3","JPEG","MPEG"],a:0},
-  {id:137,m:3,q:"Avtomobilning xavfsizlik yostiqchalari (Airbag) qaysi datchikdan signal oladi?",o:["Akselerometr (urilish datchigi)","Termometr","Yomg'ir datchigi","Namlik datchigi"],a:0},
-  {id:138,m:3,q:"O'rnatilgan tizimlarda vaqtni aniq boshqaruvchi operatsion tizim turi?",o:["RTOS (Real-Time OS)","Windows 11","macOS","Ubuntu"],a:0},
-  {id:139,m:3,q:"Aqlli qishloq xo'jaligida tuproq holatini bilish uchun qaysi sensor?",o:["Namlik va sho'rlanish sensori","Mikrofon","Kamera","Spidometr"],a:0},
-  {id:140,m:3,q:"ESP8266 yoki ESP32 modullarining asosiy vazifasi?",o:["Qurilmani Wi-Fi tarmog'iga ulash","Faqat ovoz chiqarish","Motorlarni aylantirish","GPS koordinatalarini olish"],a:0},
-  {id:141,m:3,q:"Har bir tugun boshqa barcha tugunlar bilan bog'lanadigan tarmoq topologiyasi?",o:["Mesh (To'r)","Star (Yulduz)","Bus (Shina)","Ring (Halqa)"],a:0},
-  {id:142,m:3,q:"Aqlli shahar da avtobuslar joylashuvini ko'rsatuvchi texnologiya?",o:["GPS va GPRS","Bluetooth","QR-kod","FM radio"],a:0},
-  {id:143,m:3,q:"Mikrokontrollerni xavfli kuchlanishdan himoyalovchi qurilma?",o:["Optopara (Opto-isolator)","Tranzistor","Rezistor","Kondensator"],a:0},
-  {id:144,m:3,q:"\"Smart Grid\" tizimi nima uchun xizmat qiladi?",o:["Elektr energiyasi tarmog'ini aqlli boshqarish","Suv oqimini","Yo'l harakatini","Internet tezligini"],a:0},
-  {id:145,m:3,q:"Aqlli shaharda ko'cha yorug'ligini avtomatlashtiruvchi datchik?",o:["Foto-rezistor (LDR)","Namlik datchigi","Gaz datchigi","Akselerometr"],a:0},
-  {id:146,m:3,q:"Aqlli shaharda chiqindi qutilarini to'lganligini aniqlovchi sensor?",o:["Ultratovushli masofa sensori","Namlik sensori","Gaz sensori","Termometr"],a:0},
-  {id:147,m:3,q:"Avtomobil tormoz tizimida g'ildirak sirpanib ketishini oldini oluvchi blok?",o:["ABS (Anti-lock Braking System)","GPS","SRS (Airbag)","OBD-II"],a:0},
-  {id:148,m:3,q:"FOTA (Firmware Over-The-Air) nima uchun kerak?",o:["Proshivkani masofadan simsiz yangilash","Zaryadlash","Sovutish","Radio eshitish"],a:0},
-  {id:149,m:3,q:"Kriptografik kalitlarni apparat darajasida himoyalovchi chip nomi?",o:["TPM (Trusted Platform Module)","GPU","RAM","BIOS"],a:0},
-  {id:150,m:3,q:"Aqlli qishloq xo'jaligida o'simlik suvsizlanganini qaysi datchik aytadi?",o:["Tuproq namligi datchigi (Soil Moisture)","Barometr","Gyroskop","Mikrofon"],a:0}
+  {id:12,m:1,q:"I2C protokoli ma'lumot uzatish uchun nechta simdan (liniyadan) foydalanadi?",o:["2 ta (SDA va SCL)","1 ta (faqat ma'lumot uchun)","3 ta (MISO, MOSI, SCK)","4 ta (RX, TX, GND, VCC)"],a:0},
+  {id:13,m:1,q:"I2C tarmog'ida SDA va SCL liniyalarining vazifasi nima?",o:["SDA – ma'lumotlar liniyasi, SCL – sinxronizatsiya (soat) liniyasi","SDA – faqat qabul qilish, SCL – faqat jo'natish","SDA – quvvat manbai, SCL – yer (GND)","SDA – qurilmani yoqish, SCL – qurilmani o'chirish"],a:0},
+  {id:14,m:1,q:"I2C tarmog'i qanday arxitekturaga (boshqaruv turiga) asoslangan?",o:["Master-Slave (Asosiy va tobe qurilmalar)","Peer-to-Peer (Teng huquqli)","Ring (Halqa)","Mesh (To'rsimon)"],a:0},
+  {id:15,m:1,q:"I2C protokoli asosan qanday maqsadlarda qo'llaniladi?",o:["Bitta plata ichida mikrokontroller va turli modullar (datchiklar, xotira chiplari, RTC) o'rtasida qisqa masofali aloqa o'rnatish uchun","Video va yuqori sifatli audio signallarni uzoq masofaga uzatish uchun","Faqat katta hajmdagi fayllarni tezkor ko'chirish uchun","Kompyuterlarni global tarmoqqa (Internetga) ulash uchun"],a:0},
+  {id:16,m:1,q:"CAN qisqartmasi qanday ma'noni anglatadi?",o:["Controller Area Network","Computer Area Network","Central Analog Node","Control and Navigation"],a:0},
+  {id:17,m:1,q:"CAN shina tizimi asosan qaysi sohalarda eng ko'p qo'llaniladi?",o:["Avtomobil sanoatida va sanoat avtomatizatsiyasida (mikrokontrollerlar va datchiklar o'rtasida)","Uy internet tarmoqlarida (Wi-Fi va LAN o'rniga)","Veb-serverlar o'rtasida katta hajmdagi fayllarni uzatishda","Smartfonlar va simsiz qurilmalar o'rtasidagi aloqada"],a:0},
+  {id:18,m:1,q:"CAN tarmog'ida ma'lumotlar ikkita sim (CAN High va CAN Low) orqali differensial signal ko'rinishida uzatiladi. Buning asosiy sababi nima?",o:["Tashqi elektromagnit xalaqitlardan (shovqinlardan) himoya qilish va axborotning ishonchli yetib borishini ta'minlash","Tarmoqdagi qurilmalarni yuqori kuchlanishli elektr energiyasi bilan ta'minlash","Ma'lumotlarni apparat darajasida shifrlash (kriptografiya) uchun","Biri faqat qabul qilish (RX), ikkinchisi faqat uzatish (TX) uchun xizmat qilgani sababli"],a:0},
+  {id:19,m:1,q:"CAN tizimida xabarlarning ustuvorligi (prioriteti) qanday aniqlanadi?",o:["Eng kichik ID (Identifier) raqamiga ega xabar eng yuqori ustuvorlikka ega bo'ladi va shina band bo'lganda birinchi bo'lib uzatiladi","Eng katta ID (Identifier) raqamiga ega xabar birinchi bo'lib uzatiladi","Ma'lumotlar navbat asosida (FIFO - birinchi kelgan, birinchi ketadi) uzatiladi","Maxsus \"Master\" qurilma qaysi xabar birinchi ketishini hal qiladi"],a:0},
+  {id:20,m:1,q:"CAN tarmog'ining arxitekturasi (topologiyasi) qanday tuzilgan va markaziy boshqaruvchi (Master) qurilma bormi?",o:["Barcha qurilmalar umumiy shinaga parallel ulanadi (Bus topology) va tarmoqda qat'iy Master qurilma yo'q (Multi-master tizim)","Tizimda qat'iy Master va Slave arxitekturasi ishlaydi, Master ruxsatisiz hech kim ma'lumot yo'llay olmaydi","Tarmoq Yulduz (Star) shaklida bo'ladi va markaziy router barcha ma'lumotlarni boshqaradi","Qurilmalar bir-biri bilan faqat halqa (Ring) shaklida ketma-ket ulanadi"],a:0},
+  {id:21,m:1,q:"USB qisqartmasi qanday ma'noni anglatadi?",o:["Universal Serial Bus","Unified System Bus","Universal Synchronous Board","Utility Serial Bandwidth"],a:0},
+  {id:22,m:1,q:"USB tarmog'ining arxitekturasi (topologiyasi) qanday tuzilgan va kim uni boshqaradi?",o:["\"Yulduz\" (Tiered Star) topologiyasi asosida ishlaydi, tizimda faqat bitta Boshqaruvchi (Host) bo'ladi va barcha jarayonlarni faqat u boshqaradi","\"Halqa\" (Ring) topologiyasi asosida ishlaydi, barcha qurilmalar bir-biriga ketma-ket zanjir bo'lib ulanadi","Teng huquqli (Peer-to-Peer) bo'lib, har qanday qurilma xohlagan vaqtida boshqaruvni o'z qo'liga olishi mumkin","\"To'r\" (Mesh) topologiyasi bo'lib, har bir USB qurilma tarmoqdagi boshqa barcha qurilmalar bilan to'g'ridan-to'g'ri ulanadi"],a:0},
+  {id:23,m:1,q:"Standart USB 1.x va 2.0 portlari orqali qurilmalarni quvvatlantirish uchun taqdim etiladigan odatiy ishchi kuchlanish (VBUS) qancha bo'ladi?",o:["5V","3.3V","12V","24V"],a:0},
+  {id:24,m:1,q:"USB interfeysining standart (masalan, USB 2.0) ma'lumot uzatish liniyalari qanday nomlanadi va ular qanday ishlaydi?",o:["D+ va D- (Data+ va Data-) — shovqinlarga chidamli differensial signal orqali ma'lumot uzatiladi","SCL va SDA — sinxron takt va ma'lumot liniyalari orqali","RX va TX — alohida qabul qilish va uzatish liniyalari orqali","MISO va MOSI — Master va Slave o'rtasidagi parallel liniyalar orqali"],a:0},
+  {id:25,m:1,q:"USB interfeysining \"Hot-swapping\" (yoki Hot-plugging) xususiyati nimani anglatadi?",o:["Kompyuterni (yoki Host qurilmani) o'chirib-yoqmasdan turib, USB qurilmalarni ulash va uzish imkoniyatini","Qurilma qizib ketganda avtomatik ravishda o'chishini va sovitish tizimi ishga tushishini","Tarmoq tezligini avtomatik ravishda eng yuqori darajaga ko'tarish va optimallashtirishni","Ma'lumotlarni apparat darajasida shifrlangan holda xavfsiz uzatishni"],a:0},
+  {id:26,m:1,q:"Bluetooth orqali bir nechta qurilmalar o'zaro ulanganda qanday nomlanuvchi kichik tarmoq hosil bo'ladi?",o:["Piconet (Pikotarmoq)","Ethernet (Eternet)","Intranet (Intratarmoq)","Subnet (Qism-tarmoq)"],a:0},
+  {id:27,m:1,q:"Bluetooth tarmog'ida qurilmalar o'rtasida ulanishni boshqarish uchun qanday rollar taqsimlanadi?",o:["Master (Boshqaruvchi) va bitta yoki bir nechta Slave (Tobe) qurilmalar orqali","Router (Marshrutizator) va Switch (Kommutator) rollari orqali","Faqat teng huquqli (Peer-to-Peer) tugunlar bo'lib ishlaydi","Faqat ikkita Master qurilma orqali"],a:0},
+  {id:28,m:1,q:"Zamonaviy aqlli soatlar, fitnes datchiklar va \"Aqlli uy\" qurilmalarini uzoq vaqt quvvatlantirmasdan boshqarish imkonini beruvchi BLE texnologiyasining kengaytmasi nima?",o:["Bluetooth Low Energy","Bluetooth Large Extension","Bluetooth Light Emission","Bluetooth Local Environment"],a:0},
+  {id:29,m:1,q:"Ikki Bluetooth qurilmasini bir-biriga birinchi marta tanishtirish va xavfsiz boshqaruvni o'rnatish (masalan, smartfonni mashina magnitolasiga ulash) jarayoni nima deb ataladi?",o:["Pairing (Juftlash/Bog'lash)","Broadcasting (Eshittirish)","Handshaking (Qo'l siqish)","Ping (Pinglash)"],a:0},
+  {id:30,m:1,q:"Kundalik hayotda eng ko'p ishlatiladigan standart (Class 2) Bluetooth qurilmalarini smartfon orqali barqaror boshqarish uchun ular orasidagi masofa odatda qancha bo'lishi kerak?",o:["Taxminan 10 metr atrofida (to'siqlarga qarab)","Maksimal 1-2 metr","O'rtacha 100 metr","1 kilometrgacha bemalol yetadi"],a:0},
+  {id:31,m:1,q:"O'rnatilgan tizimlarda (embedded systems) Wi-Fi tarmog'iga ulanish uchun eng mashhur, qulay va arzon mikrokontroller modullaridan biri qaysi?",o:["ESP8266 yoki ESP32 oilasiga mansub chiplar","ATmega328P (Arduino Uno asosiy chipi)","PIC16F877A","555 Taymer mikrosxemasi"],a:0},
+  {id:32,m:1,q:"Wi-Fi tarmog'ida qurilmalar (datchiklar, kontrollerlar) markaziy router (Kirish nuqtasi - Access Point) orqali bir-biriga va internetga ulansa, bu ulanish rejimi nima deb ataladi?",o:["Infrastructure (Infratuzilma rejimi)","Piconet (Pikotarmoq)","Ad-hoc (Teng huquqli ulanish)","Ring (Halqasimon topologiya)"],a:0},
+  {id:33,m:1,q:"Wi-Fi orqali ishlaydigan \"Aqlli uy\" yoki IoT (Internet of Things) qurilmalarida ma'lumotlarni kam energiya va trafik sarflab, tezkor uzatish uchun ko'pincha qaysi protokoldan foydalaniladi?",o:["MQTT (Message Queuing Telemetry Transport)","FTP (File Transfer Protocol)","POP3 (Post Office Protocol)","SSH (Secure Shell)"],a:0},
+  {id:34,m:1,q:"Wi-Fi tarmog'iga ulanuvchi o'rnatilgan tizimlar xavfsizligini ta'minlashda hozirgi kunda qaysi shifrlash protokoli eng ishonchli va keng tarqalgan standart hisoblanadi?",o:["WPA2 yoki WPA3 (Wi-Fi Protected Access)","WEP (Wired Equivalent Privacy)","MAC Manzilni filtrlash","Yashirin SSID (Hidden Network)"],a:0},
+  {id:35,m:1,q:"Batareyadan (avtonom) ishlaydigan Wi-Fi asosidagi o'rnatilgan tizimlarning (masalan, harorat datchiklarining) eng katta muammosi va kamchiligi nima hisoblanadi?",o:["Wi-Fi modulining energiya (quvvat) sarfi ancha yuqori ekanligi","Faqat 1-2 metr masofada ishlashi","Ma'lumot uzatish tezligining Bluetooth'dan ham sekinligi","Bir vaqtning o'zida faqat bitta qurilma bilan ma'lumot almashadi"],a:0},
+  {id:36,m:1,q:"Arduino platasiga LED ulayotganda uning kuyib qolmasligi uchun zanjirga qaysi elektron komponentni qo'shish zarur?",o:["Rezistor (odatda 220 yoki 330 Om)","Tranzistor","Kondensator","Drossel (g'altak)"],a:0},
+  {id:37,m:1,q:"Arduino dasturida LED ulangan pinni ma'lumot chiquvchi port sifatida sozlash uchun setup() qismida qaysi funksiyadan foydalaniladi?",o:["pinMode()","digitalWrite()","analogRead()","delay()"],a:0},
+  {id:38,m:1,q:"LED ni yoqish (unga 5V kuchlanish berish) uchun dasturda qanday buyruq yoziladi (agar LED 13-pinga ulangan bo'lsa)?",o:["digitalWrite(13, HIGH);","analogWrite(13, ON);","digitalRead(13, HIGH);","pinMode(13, 1);"],a:0},
+  {id:39,m:1,q:"LED ning yorug'lik darajasini asta-sekin pasaytirish yoki kuchaytirish (xira/yorug' qilish) uchun qaysi texnologiya va funksiyadan foydalaniladi?",o:["PWM (Pulse Width Modulation) va analogWrite()","ADC va digitalWrite()","UART va Serial.print()","SPI va shiftOut()"],a:0},
+  {id:40,m:1,q:"LED miltillashi (Blink) uchun uni yoqqandan so'ng ma'lum vaqt kutish talab etiladi. Buni ta'minlovchi delay(1000); buyrug'i dasturni qancha vaqtga to'xtatib turadi?",o:["1 soniyaga (1000 millisoniyaga)","1 daqiqaga","1000 soniyaga","1 millisoniyaga"],a:0},
+  {id:41,m:1,q:"Arduino yoki ESP kabi mikrokontrollerlar yordamida ham harorat, ham namlikni bir vaqtda o'lchash uchun eng mashhur va arzon datchiklardan biri qaysi?",o:["DHT11 yoki DHT22 (Harorat va namlik datchigi)","LDR (Foytorezistor - yorug'lik datchigi)","HC-SR04 (Ultratovushli masofa datchigi)","PIR (Harakat datchigi)"],a:0},
+  {id:42,m:1,q:"Harorat o'lchagichni haqiqiy \"aqlli\" (IoT) qurilmaga aylantirish, ya'ni ma'lumotlarni bevosita Wi-Fi orqali serverga jo'natish uchun qaysi mikrokontroller platasidan foydalanish eng qulay?",o:["NodeMCU (ESP8266) yoki ESP32 (chunki ularda Wi-Fi modul o'rnatilgan)","Arduino Uno (chunki u eng kuchli protsessorga ega)","Arduino Mega (chunki pinlari juda ko'p)","ATtiny85 (chunki u eng kichik mikrokontroller)"],a:0},
+  {id:43,m:1,q:"\"Aqlli\" harorat o'lchagich ma'lumotlarni (masalan, har 5 soniyada) serverga yoki smartfonga yuborishi uchun qaysi yengil, IoT qurilmalari uchun maxsus moslashtirilgan protokoldan foydalanish maqsadga muvofiq?",o:["MQTT (Message Queuing Telemetry Transport)","SMTP (Elektron pochta protokoli)","FTP (File Transfer Protocol)","SSH (Secure Shell)"],a:0},
+  {id:44,m:1,q:"Qurilmaning o'zida harorat ma'lumotlarini chiroyli va ixcham tarzda ko'rsatib turish uchun ko'pincha I2C interfeysi orqali ulanadigan qaysi ekran turidan keng foydalaniladi?",o:["0.96 dyuymli SPI OLED display 128x64","Katta hajmdagi LCD televizor ekrani","7 segmentli mexanik soat ekrani","VGA portli eski monitor"],a:0},
+  {id:45,m:1,q:"DS18B20 kabi aniq raqamli harorat datchiklarini mikrokontrollerga ulashda, signal barqarorligini ta'minlash uchun ma'lumot (Data) va quvvat (VCC) liniyalari o'rtasiga qanday elektron komponent ulash talab etiladi?",o:["4.7k Om yoki 10k Om kuchlanish tortuvchi (Pull-up) resistor","100 uF sig'imli elektrolitik kondensator","NPN turdagi kuchaytirgich tranzistor","5V kuchlanishda ishlaydigan elektromagnit rele"],a:0},
+  {id:46,m:1,q:"\"Aqlli uy\" (Smart Home) tizimida turli xil ishlab chiqaruvchilarning datchik va qurilmalarini bitta umumiy tarmoqqa birlashtirib, ularni markazdan boshqarishga imkon beruvchi asosiy qurilma nima deb ataladi?",o:["Smart Hub (Markaziy boshqaruvchi / Shlyuz)","Smart TV (Aqlli televizor)","Wi-Fi Router","Bluetooth kuchaytirgich"],a:0},
+  {id:47,m:1,q:"Aqlli uy tizimidagi batareyadan ishlaydigan datchiklar ko'p energiya sarflaydigan Wi-Fi o'rniga, quvvatni tejash va o'zaro \"to'r\" (Mesh) tarmog'ini hosil qilish uchun ko'pincha qaysi maxsus simsiz protokollardan foydalanadi?",o:["Zigbee va Z-Wave","HTTP va FTP","5G va LTE","NFC va RFID"],a:0},
+  {id:48,m:1,q:"Aqlli uy modelida \"Stsenariy\" (Scenario) yoki \"Avtomatlashtirish\" atamasi nimani anglatadi?",o:["Ma'lum bir shart bajarilganda (masalan, datchik harakatni sezganda yoki kechki soat 10 bo'lganda) tizimning avtomatik ravishda bir qator amallarni (chiroqni yoqish, eshikni qulflash) bajarishi","Qurilmalarni faqat maxsus mobil ilova orqali qo'lda yoqib-o'chirish imkoniyati","Uy qurilishi boshlanishidan oldin chiziladigan 3D arxitektura loyihasi","Tizimning faqatgina inson ovozini tanib ishlash xususiyati"],a:0},
+  {id:49,m:1,q:"Aqlli uyni xavfsizlik tizimi (Security) nuqtai nazaridan modellashtirishda, xonaga yoki hovliga ruxsatsiz kirishni aniqlash uchun asosan qaysi turdagi datchiklardan foydalaniladi?",o:["PIR (Harakat datchigi) va Gerkon (eshik/deraza ochilishini sezuvchi magnit datchik)","DS18B20 (Harorat datchigi) va CO2 datchigi","LDR (Yorug'lik datchigi) va tuproq namligi datchigi","Ultratovushli masofa datchigi (HC-SR04)"],a:0},
+  {id:50,m:1,q:"Bulutli (Cloud-based) aqlli uy tizimlari va Mahalliy (Local) tizimlar o'rtasidagi eng asosiy farq nima?",o:["Bulutli tizimlar qaror qabul qilish uchun internet orqali uzoqdagi serverga bog'lanadi, mahalliy tizimlar (masalan, Home Assistant) esa barcha ma'lumotlarni uyning o'zidagi xususiy serverda, internetsiz qayta ishlaydi","Mahalliy tizimlarni umuman smartfon orqali boshqarib bo'lmaydi","Bulutli tizimlarda qurilmalar faqat sim orqali ulanadi","Bulutli tizimlar internetsiz ham to'laqonli ishlayveradi, mahalliy tizimlar esa doim internet talab qiladi"],a:0},
+  // Mavzu 2
+  {id:51,m:2,q:"Avtomatik sug'orish tizimida o'simlikning suvga muhtoj yoki muhtoj emasligini aniqlash uchun asosan qaysi datchikdan foydalaniladi?",o:["Tuproq namligi datchigi (Soil Moisture Sensor)","Harorat va namlik datchigi (DHT11)","Ultratovushli masofa datchigi (HC-SR04)","Yorug'lik datchigi (LDR)"],a:0},
+  {id:52,m:2,q:"Tizimda mikrokontrollerdan kelgan buyruqqa asosan suv oqimini ochib-yopish yoki suv tortish vazifasini qaysi qurilma bajaradi?",o:["Elektromagnit klapan (Solenoid valve) yoki kichik suv pompasi","Qadamli (Stepper) motor","Rele (Relay) modulisiz oddiy LED chiroq","Pyezodinamik (Buzzer)"],a:0},
+  {id:53,m:2,q:"Tuproq namligi datchigidan olingan signalni o'qib, qachon suv pompasini yoqish kerakligini hal qiluvchi va tizimni boshqaruvchi \"miya\" vazifasini qaysi komponent bajaradi?",o:["Arduino, ESP yoki shunga o'xshash mikrokontroller","LCD displey","5V Quvvat bloki (Adapter)","Wi-Fi router"],a:0},
+  {id:54,m:2,q:"Avtomatik sug'orish tizimlarining an'anaviy (qo'lda) sug'orishdan eng asosiy afzalligi nimada?",o:["Suv resurslarini tejashi va inson aralashuvisiz o'simlikni doimiy ravishda optimal namlikda ushlab turishi","O'simliklarning tezroq gullashini kimyoviy tarzda ta'minlashi","Faqat tunda ishlashga mo'ljallanganligi","Tuproq tarkibidagi barcha mineral elementlarni tahlil qila olishi"],a:0},
+  {id:55,m:2,q:"Zamonaviy IoT (Internet of Things) asosidagi \"aqlli\" sug'orish tizimlari tuproq namligidan tashqari yana qanday tashqi ma'lumotlarga asoslanib suvni yanada ko'proq tejashi mumkin?",o:["Internetdagi ob-havo prognozlariga tayanib (masalan, bugun yomg'ir yog'ishi kutilayotgan bo'lsa, sug'orishni bekor qilishi orqali)","O'simlik turiga qarab audiodinamikadan musiqa qo'yishi orqali","Internet tezligiga qarab suv bosimini o'zgartirishi orqali","Uyda boshqa aqlli qurilmalarning elektr quvvati sarfiga qarab"],a:0},
+  {id:56,m:2,q:"Nima uchun o'rnatilgan tizimlarda C va C++ eng ko'p qo'llaniladigan dasturlash tillari hisoblanadi?",o:["Xotira va registrlarni to'g'ridan-to'g'ri boshqarish imkoniyati hamda apparat resurslaridan tejamkor, tezkor (yuqori samaradorlik bilan) foydalana olgani uchun","Avtomatik xotira tozalash (Garbage collection) xususiyati bo'lgani va xotira to'lishining oldini olgani uchun","Dasturlash tillari ichida eng sodda va sintaksisi o'rganishga eng oson bo'lgani uchun","Yozilgan kodlar faqat bulutli serverlarga ulanib ishlagani uchun"],a:0},
+  {id:57,m:2,q:"Mikrokontroller registrlarida ma'lum bir bitni mantiqiy \"1\" holatiga o'tkazish (Set qilish) uchun C/C++ dasturlashda odatda qaysi bitli (bitwise) operatordan foydalaniladi?",o:["| (Bitwise OR - Mantiqiy QO'SHISH)","& (Bitwise AND - Mantiqiy KO'PAYTIRISH)","~ (Bitwise NOT - Mantiqiy INKOR)","^ (Bitwise XOR - Mantiqiy ISTISNO)"],a:0},
+  {id:58,m:2,q:"O'rnatilgan tizimlarda yozilgan va kompilyatsiya qilingan asosiy dastur kodi (buyruqlar to'plami) odatda mikrokontrollerning qaysi xotirasida saqlanadi?",o:["Flash (Daimiy - ROM) xotirasida","EEPROM xotirasida","RAM (Tezkor xotira - SRAM yoki DRAM)","Mikrokontrollerning oziqlantirish blokida"],a:0},
+  {id:59,m:2,q:"C/C++ tilida mikrokontrollerning apparat registrlari yoki uzilishlar (Interrupts) bilan ishlashda o'zgaruvchilar oldiga nima maqsadda volatile kalit so'zi qo'yiladi?",o:["Kompilyatorga ushbu o'zgaruvchini kesh xotiraga olib optimallashtirmaslikni uqtirish uchun (chunki uning qiymati dastur kodidan tashqari, apparat tomonidan ham kutilmaganda o'zgartirilishi mumkin)","O'zgaruvchi qiymati dastur ishlashi davomida umuman o'zgarmasligini (konstanta bo'lishini) ta'minlash uchun","O'zgaruvchini xotirada eng kam joy egallaydigan formatga (bit formatga) o'tkazish uchun","O'zgaruvchi faqatgina mikrokontrollerning tashqi xotirasida saqlanishi uchun"],a:0},
+  {id:60,m:2,q:"Mikrokontrollerlar uchun C/C++ tilida yozilgan dasturlarning main() funksiyasi nima uchun doimo cheksiz tsikl (masalan, while(1) yoki for(;;)) ichida yoziladi?",o:["Chunki mikrokontrollerda kompyuterdagi kabi qaytish uchun Operatsion Tizim (OS) yo'q, agar dastur tugasa mikrokontroller qotib qoladi, shu sababli jarayon doimiy aylanishi kerak","Bu xato hisoblanadi, cheksiz tsikl yozish mikrokontrollerni qizdirib yuboradi","Datchiklardan keladigan ma'lumotlarni qabul qilib olguncha kutib turish uchun, keyin tsikl tugatiladi","Mikrokontroller quvvatini tejash maqsadida uni tezda uyqu rejimiga o'tkazish uchun"],a:0},
+  {id:61,m:2,q:"\"Aqlli\" svetoforni oddiy an'anaviy svetofordan ajratib turuvchi eng asosiy xususiyat nimada?",o:["Datchiklar yoki kameralar orqali chorrahadagi haqiqiy tirbandlikni (avtomobillar oqimini) tahlil qilib, chiroqlar yonish vaqtini shunga moslab avtomatik o'zgartirishida","Faqat quyosh energiyasi (panellari) yordamida ishlashida","Svetofor faqat piyodalar maxsus tugmani bosganda ishlashida","Oddiy lampochkalar o'rniga faqat svetodiodlardan (LED) foydalanishida"],a:0},
+  {id:62,m:2,q:"Aqlli svetofor tizimlarida avtomobillar bor-yo'qligini yoki ularning sonini aniqlash uchun ko'pincha qaysi datchik va texnologiyalardan foydalaniladi?",o:["Asfalt ostiga o'rnatilgan induktiv halqalar (Inductive loop), ultratovushli datchiklar yoki aqlli kameralardan","LDR (Yorug'lik) va gaz datchiklaridan","Tuproq namligi va harorat datchiklaridan","Gerkon (eshik/deraza ochilishini sezuvchi) datchiklardan"],a:0},
+  {id:63,m:2,q:"Aqlli svetofor tizimi tez yordam, o't o'chirish yoki politsiya kabi maxsus xizmat mashinalariga qanday qilib ustuvorlik (yashil yo'lak) berishi mumkin?",o:["V2X (Vehicle-to-Everything) radioaloqasi, GPS yoki maxsus akustik (ovoz) signallarni aniqlash orqali ularni uzoqdan payqab, ularning yo'nalishida avtomatik yashil chiroqni yoqish orqali","Ular kelganda barcha chiroqlarni o'chirib, miltillovchi sariq rejimga o'tish orqali","Tezlik datchiklari orqali eng tez kelayotgan mashinani aniqlab, faqat shunga ruxsat berish orqali","Maxsus mashinalar faqat tungi vaqtda ustuvorlikka ega bo'ladi"],a:0},
+  {id:64,m:2,q:"Butun bir shahardagi aqlli svetoforlarni yagona markaziy server (backend) bilan bog'lash va katta ma'lumotlarni (Big Data) tahlil qilish uchun qanday aloqa texnologiyalaridan foydalaniladi?",o:["4G/5G mobil tarmoqlari, tolali optik internet yoki LoRaWAN kabi IoT (Internet of Things) tarmoqlari","I2C yoki SPI kabi mikrokontroller ichki protokollari","Bluetooth Low Energy (BLE) va oddiy radioto'lqinlar","Infraqizil (IR) nurlar"],a:0},
+  {id:65,m:2,q:"Arduino kabi mikrokontrollerlarda aqlli svetofor prototipini dasturlashda, chiroqlar vaqtini kutish davomida mikrokontroller qotib qolmasligi va boshqa datchiklarni ham o'qiy olishi uchun qaysi yondashuv to'g'ri bo'ladi?",o:["delay() o'rniga mikrokontrollerning ichki taymeridan (millis() funksiyasidan) foydalanib asinxron kod yozish","Dasturni faqat setup() qismi ichida aylantirish","Har bir chiroq o'rtasida delay() funksiyasidan ko'p marta foydalanish","Har safar chiroq o'zgarganda plataning Reset tugmasini dasturiy tarzda bosish"],a:0},
+  {id:66,m:2,q:"Masofadan boshqariluvchi robot g'ildiraklarini harakatga keltirishda asosan qaysi turdagi dvigatel va qo'shimcha modul birgalikda ishlatiladi?",o:["O'zgarmas tok dvigateli (DC motor) va Motor drayveri (masalan, L298N)","Servo motor va rele moduli","Qadamli motor (Stepper) va Wi-Fi router","Pyezodinamik va tranzistor"],a:0},
+  {id:67,m:2,q:"Robotni oddiy smartfon (mobil ilova) orqali taxminan 10 metr masofadan boshqarish uchun robotga qaysi simsiz aloqa modulini o'rnatish eng qulay va arzon yechim hisoblanadi?",o:["Bluetooth modul (HC-05 yoki HC-06)","GSM modul (SIM800L)","NRF24L01 (Radio modul)","GPS modul (NEO-6M)"],a:0},
+  {id:68,m:2,q:"Arduino kabi mikrokontroller va dvigatellar o'rtasiga nima maqsadda albatta Motor drayveri (L298N yoki L293D) o'rnatilishi shart?",o:["Arduino pinlari to'g'ridan-to'g'ri motor uchun yetarli kuchlanish va tok bera olmagani hamda motorning aylanish yo'nalishini dastur orqali o'zgartirish uchun","Motorlarni internetga to'g'ridan-to'g'ri ulash va ma'lumotlarni bulutli serverga jo'natish uchun","Robotning og'irlik markazini muvozanatda ushlab turish uchun","Dasturdagi mantiqiy xatolarni avtomatik tarzda to'g'rilab borish uchun"],a:0},
+  {id:69,m:2,q:"Robotning elektr quvvati ta'minotini (Power supply) to'g'ri tashkil etish bo'yicha eng yaxshi amaliyot qaysi?",o:["Motorlar uchun alohida kuchliroq quvvat manbai (masalan, 18650 Li-ion akkumulyatorlar) ajratish, chunki motorlar harakatlanganda tarmoqdagi kuchlanish tushib ketib mikrokontrollerni o'chirib qo'yishi mumkin","Barcha elektronikani (Arduino va motorlarni) bitta kichik 9V \"Krona\" batareyasidan quvvatlash (bu eng kuchli batareya hisoblanadi)","Robotni umuman batareyasiz, faqat xona yorug'ligida ishlaydigan kichik quyosh panellariga ulash","Dvigatellarga umuman quvvat bermaslik, ular mikrokontrollerdagi axborot hisobiga o'zi aylanadi"],a:0},
+  {id:70,m:2,q:"Robot tezligini silliq boshqarish (masalan, sekinroq yurish yoki sekin burilish) uchun mikrokontroller tomonidan dvigatel drayveriga qanday turdagi signal yuboriladi?",o:["PWM (Pulse Width Modulation - Impuls kenglik modulyatsiyasi) signali","I2C (Inter-Integrated Circuit) signali","UART seriyali ma'lumotlar signali","Analog video signali"],a:0},
+  {id:71,m:2,q:"IoT (Internet of Things) tushunchasi asosan nimani anglatadi?",o:["Turli xil jismoniy qurilmalar, maishiy texnika va datchiklarning internet orqali o'zaro ma'lumot almashish va boshqarilish tizimini","Faqatgina kompyuterlar, noutbuklar va smartfonlarni internetga ulash tarmog'ini","Tarmoq xavfsizligini ta'minlovchi yangi avlod antivirus dasturini","Faqat sanoat korxonalarida ishlatiladigan yopiq lokal aloqa tizimini"],a:0},
+  {id:72,m:2,q:"IoT arxitekturasining qaysi qatlami (layer) jismoniy olamdan birlamchi ma'lumotlarni yig'ish (masalan, harorat, namlik, harakatni o'lchash) vazifasini bajaradi?",o:["Idrok etish/Sensorlar qatlami (Perception / Sensing layer)","Tarmoq qatlami (Network layer)","Ma'lumotlarni qayta ishlash qatlami (Processing layer)","Ilova qatlami (Application layer)"],a:0},
+  {id:73,m:2,q:"IoT arxitekturasidagi \"Tarmoq qatlami\" (Network layer) ning asosiy vazifasi nima?",o:["Sensorlardan olingan ma'lumotlarni bulutli serverlarga (Cloud) yoki boshqa qurilmalarga Wi-Fi, Bluetooth, 5G yoki LoRa kabi texnologiyalar orqali uzatish","Barcha IoT qurilmalarini uzluksiz elektr quvvati bilan ta'minlash","Olingan ma'lumotlarni foydalanuvchiga faqat vizual (grafik) interfeysda ko'rsatish","Qurilma xotirasidagi keraksiz ma'lumotlarni avtomatik ravishda o'chirib tashlash"],a:0},
+  {id:74,m:2,q:"Quyidagilardan qaysi biri IoT qurilmalari o'rtasida ma'lumot almashish uchun maxsus ishlab chiqilgan, kam energiya va internet trafigi talab qiluvchi yengil protokol hisoblanadi?",o:["MQTT (Message Queuing Telemetry Transport)","FTP (File Transfer Protocol)","HTTP (Hypertext Transfer Protocol)","POP3 (Post Office Protocol)"],a:0},
+  {id:75,m:2,q:"Katta miqyosdagi IoT tizimlarida (masalan, \"Aqlli shahar\" loyihalarida) minglab sensorlardan keladigan katta hajmdagi ma'lumotlarni (Big Data) saqlash, chuqur tahlil qilish va murakkab qarorlar qabul qilish asosan qayerda amalga oshiriladi?",o:["Bulutli platformalarda (Cloud Computing) yoki tarmoq chekkasidagi hisoblash (Edge Computing) markazlarida","Faqatgina foydalanuvchining smartfon xotirasida","Bevosita har bir sensorning o'zida (datchik mikrokontrollerida)","Oddiy uy Wi-Fi routerining ichki xotirasida"],a:0},
+  {id:76,m:2,q:"IoT tizimlarida Simsiz Sensor Tarmoqlari (WSN) deganda asosan nima tushuniladi?",o:["Jismoniy muhitni (harorat, namlik, tebranish) kuzatish va ma'lumotlarni markaziy tugunga uzatish uchun hudud bo'ylab tarqatilgan simsiz datchiklar (tugunlar) to'plami","Faqat simli internet orqali kompyuterlarni bog'lovchi markazlashtirilgan tizim","Uyali aloqa operatorlarining 5G tayanch stansiyalarini bir-biriga ulash texnologiyasi","Faqat kosmik stansiyalarda ishlatiladigan yopiq harbiy aloqa protokoli"],a:0},
+  {id:77,m:2,q:"Odatda IoT tarmog'idagi bitta standart sensor tuguni (Sensor node) qanday asosiy qismlardan tashkil topadi?",o:["Datchik, mikrokontroller (ma'lumotni ishlash uchun), radio modul (transiver) va quvvat manbaidan (batareya)","Datchik, monitor, klaviatura va Wi-Fi routerdan","Faqat datchik va katta hajmli qattiq diskdan (HDD)","Datchik va to'g'ridan-to'g'ri 220V elektr tarmog'i ulagichidan"],a:0},
+  {id:78,m:2,q:"Sensor tarmoqlarida qaysi topologiya eng ishonchli va nosozliklarga chidamli hisoblanadi (bunda bitta tugun o'chib qolsa ham, ma'lumotlar boshqa tugunlar orqali manzilga yetib boradi)?",o:["To'r (Mesh) topologiyasi","Yulduz (Star) topologiyasi","Chiziqli (Bus) topologiyasi","Halqa (Ring) topologiyasi"],a:0},
+  {id:79,m:2,q:"Sensor tarmoqlarida \"Shlyuz\" (Gateway) qurilmasining asosiy vazifasi nimadan iborat?",o:["Mahalliy datchiklar tarmog'idan (masalan, Zigbee, BLE, LoRa orqali) ma'lumotlarni yig'ib, ularni global internetga (Bulutli serverlarga) o'tkazib beruvchi \"ko'prik\" vazifasini bajarish","Faqat tarmoqdagi xatolarni qidirish va viruslarni tozalash","Sensorlardan kelayotgan ma'lumotlarni xotiradan avtomatik o'chirib tashlash","Sensorlarni to'g'ridan-to'g'ri batareyasiz ishlashini ta'minlash"],a:0},
+  {id:80,m:2,q:"Uzoq hududlarda yoki ochiq tabiatda o'rnatiladigan simsiz sensor tarmoqlarining eng katta muammosi va cheklovi nima hisoblanadi?",o:["Quvvat manbai (batareya) cheklanganligi sababli, ma'lumot uzatishda energiyani maksimal darajada tejash muammosi","Qurilmalarning IP manzillari yetishmasligi","Sensorlarning juda katta va og'ir bo'lib ketishi","Ma'lumotlarni qayta ishlash uchun albatta kuchli kompyuter va Windows OS kerakligi"],a:0},
+  {id:81,m:2,q:"Bulutli texnologiyalarining (Cloud computing) o'rnatilgan tizimlar va IoT tarmog'idagi asosiy vazifasi nima?",o:["Qurilmalar va datchiklardan kelayotgan katta hajmdagi ma'lumotlarni markazlashgan holda saqlash, qayta ishlash va chuqur tahlil qilish","Mikrokontrollerlarni bevosita elektr quvvati bilan ta'minlash","Jismoniy datchiklardan butunlay voz kechish imkonini berish","Qurilmalar uchun faqat mahalliy Wi-Fi router vazifasini bajarish"],a:0},
+  {id:82,m:2,q:"O'rnatilgan tizimlardan bulutli serverlarga ma'lumotlarni tez va kam internet trafigi sarflab jo'natish uchun eng ko'p qaysi yengil protokoldan foydalaniladi?",o:["MQTT (Message Queuing Telemetry Transport)","FTP (File Transfer Protocol)","HTTP (Hypertext Transfer Protocol)","SMTP (Simple Mail Transfer Protocol)"],a:0},
+  {id:83,m:2,q:"Bulutli texnologiyalar va IoT tizimlarida \"Edge Computing\" (Chekka/Chegaraviy hisoblash) atamasi nimani anglatadi?",o:["Kechikishni (latency) va internet trafigini kamaytirish maqsadida, ma'lumotlarni bulutga jo'natishdan oldin mahalliy shlyuzda (Gateway) yoki qurilmaning o'zida dastlabki qayta ishlash va filtrlash","Barcha ma'lumotlarni hech qanday o'zgarishsiz to'g'ridan-to'g'ri markaziy bulutga yuborish","Faqatgina smartfonlar uchun mo'ljallangan maxsus bulutli xotira turi","Datchiklarni faqat bino yoki xonaning chekkalariga o'rnatish qoidasi"],a:0},
+  {id:84,m:2,q:"Quyidagilardan qaysi biri o'rnatilgan tizimlarni boshqarish va IoT ma'lumotlarini qabul qilish uchun keng qo'llaniladigan mashhur bulutli platforma (Cloud platform) hisoblanadi?",o:["AWS IoT Core (Amazon) yoki Google Cloud IoT","Adobe Illustrator","Microsoft Excel","Linux Kali OS"],a:0},
+  {id:85,m:2,q:"O'rnatilgan tizimlarni bulutli serverlarga ulashda tarmoq xavfsizligi bo'yicha yuzaga keladigan eng katta muammolardan biri nima?",o:["Kam quvvatli mikrokontrollerlarda kuchli shifrlash (encryption) algoritmlarini ishlatish qiyinligi sababli, ma'lumotlarning tutilib qolishi yoki ruxsatsiz kirishlar (kiberhujumlar) xavfi","Bulutli xotiraning bir necha soniyada to'lib qolishi","Qurilmalarning juda tez ishlab ketishi natijasida serverlarning yonib ketish xavfi","Datchiklarning faqat kunduzi yorug'likda ishlashi"],a:0},
+  {id:86,m:2,q:"Zamonaviy avtomobillarda dvigatel, tormoz yoki xavfsizlik yostiqchalarini boshqarish uchun javobgar bo'lgan asosiy elektron mikrokontroller moduli (miya) qanday nomlanadi?",o:["ECU (Electronic Control Unit)","CPU (Central Processing Unit)","GPU (Graphics Processing Unit)","SSD (Solid State Drive)"],a:0},
+  {id:87,m:2,q:"Avtomobil ichidagi turli xil boshqaruv bloklari (ECU) va datchiklar o'zaro ishonchli va tashqi shovqinlarsiz ma'lumot almashishi uchun asosan qaysi aloqa protokolidan foydalaniladi?",o:["CAN (Controller Area Network)","HTTP (Hypertext Transfer Protocol)","SPI (Serial Peripheral Interface)","FTP (File Transfer Protocol)"],a:0},
+  {id:88,m:2,q:"Tormoz tizimini bloklanib qolishdan asrovchi va sirpanchiq yo'llarda haydovchiga xavfsiz to'xtashga yordam beruvchi avtomobilga o'rnatilgan muhim tizim qanday qisqartma bilan ataladi?",o:["ABS (Anti-lock Braking System)","GPS (Global Positioning System)","USB (Universal Serial Bus)","NFS (Network File System)"],a:0},
+  {id:89,m:2,q:"Xavfsizlik yostiqchalari (Airbag) yoki ABS kabi hayot-mamot masalasiga javobgar tizimlarda oddiy operatsion tizimlar emas, balki RTOS (Real-Time Operating System) ishlatilishining eng asosiy sababi nima?",o:["RTOS ma'lumotlarni qat'iy vaqt oralig'ida (kechikishlarsiz, datchik signal bergan millisoniyadanoq) kafolatli qayta ishlash va kerakli reaksiyani ta'minlagani uchun","RTOS displeylarda chiroyliroq 3D grafik interfeys bera olgani uchun","RTOS mutlaqo bepul va ochiq kodli bo'lgani uchun","RTOS avtomobil akkumulyatoridan umuman energiya sarflamagani uchun"],a:0},
+  {id:90,m:2,q:"Avtomobil tizimidagi xatolarni (masalan, \"Check Engine\" chirog'i yonganda) o'qish, diagnostika qilish va datchiklar holatini maxsus skaner orqali ko'rish uchun mo'ljallangan universal standart port nima deb ataladi?",o:["OBD-II (On-Board Diagnostics) porti","USB Type-C porti","HDMI porti","Ethernet (LAN) porti"],a:0},
+  {id:91,m:2,q:"\"Aqlli shahar\" (Smart City) konsepsiyasining eng asosiy maqsadi nimadan iborat?",o:["Axborot va kommunikatsiya texnologiyalari (AKT) hamda IoT datchiklaridan foydalanib, shahar infratuzilmasini samarali boshqarish va aholi turmush tarzini yaxshilash","Shahardagi barcha avtomobillarni taqiqlab, faqat velosipedlarga ruxsat berish","Shahar bo'ylab faqat osmono'par binolar qurish va ko'kalamzorlashtirishni to'xtatish","Shahardagi barcha xizmatlarni inson ishtirokisiz, to'liq robotlarga topshirish"],a:0},
+  {id:92,m:2,q:"Aqlli shaharlarda \"Chiqindilarni aqlli boshqarish\" (Smart Waste Management) tizimi qanday ishlaydi?",o:["Chiqindi qutilariga to'lish darajasini o'lchaydigan datchiklar o'rnatiladi va maxsus mashinalar faqat to'lgan qutilarni yig'ish uchun eng qisqa marshrut bo'yicha harakatlanadi","Axlat qutilari har soatda, bo'sh bo'lsa ham majburiy tarzda tozalanadi","Chiqindilar to'g'ridan-to'g'ri yer osti trubalari orqali okeanga oqizib yuboriladi","Chiqindilarni saralash to'liq insonlar zimmasiga yuklatiladi va kameralar orqali jarima yoziladi"],a:0},
+  {id:93,m:2,q:"Aqlli shaharda o'rnatilgan o'n minglab kameralar, svetoforlar va datchiklardan keladigan ulkan hajmdagi ma'lumotlar (Big Data) qayerda qabul qilinadi va tahlil qilinadi?",o:["Markazlashtirilgan kuchli bulutli serverlarda (Cloud) va Backend ma'lumotlar bazalarida","Datchiklarning o'zidagi kichik xotira kartalarida (MicroSD)","Har bir shahar aholisining shaxsiy smartfonida qismlarga bo'linib saqlanadi","Shahar hokimligidagi oddiy kompyuterlarning qattiq diskida (HDD)"],a:0},
+  {id:94,m:2,q:"\"Aqlli avtoturargoh\" (Smart Parking) tizimi haydovchilarga qanday qulaylik yaratadi?",o:["Asfalt ostidagi datchiklar yoki kameralar orqali bo'sh joylarni aniqlab, haydovchilarga mobil ilova orqali eng yaqin bo'sh joyni ko'rsatadi va vaqtni tejaydi","Mashinalarni bir-birining ustiga avtomatik ko'tarib qo'yuvchi mexanizmlarni ishga tushiradi","Faqat qimmatbaho avtomobillar uchun shaharning markazidan bepul joy ajratib beradi","Avtoturargohda mashinani yuvish xizmatini avtomatik ishga tushiradi"],a:0},
+  {id:95,m:2,q:"Aqlli shahar bo'ylab tarqoq joylashgan kam quvvatli datchiklarni (masalan, suv va gaz hisoblagichlarni) uzoq masofadan internetga ulash uchun ko'pincha qaysi tarmoq texnologiyalaridan foydalaniladi?",o:["LoRaWAN, NB-IoT kabi kam energiya sarflovchi uzoq masofali tarmoqlar va 5G","Faqat qisqa masofali Wi-Fi routerlar","USB va HDMI kabellari","Bluetooth va infraqizil (IR) nurlar"],a:0},
+  {id:96,m:2,q:"O'rnatilgan tizimlarda (Embedded Systems) kuchli xavfsizlik va shifrlash tizimlarini joriy etishdagi eng asosiy qiyinchilik (muammo) nima?",o:["Xotira, hisoblash quvvati va energiya (batareya) resurslarining cheklanganligi sababli kompyuterlardagi kabi murakkab kriptografik algoritmlarni ishlatish qiyinligi","Qurilmalarning internetga umuman ulanmasligi","Xakerlarning bunday kichik qurilmalarga umuman qiziqmasligi","Qurilmalarda ortiqcha operativ xotira (RAM) mavjudligi"],a:0},
+  {id:97,m:2,q:"Xavfsizlik zaifliklarini bartaraf etish uchun qurilma dasturiy ta'minotini (proshivkasini) masofadan turib internet orqali xavfsiz yangilash texnologiyasi qanday ataladi?",o:["FOTA (Firmware Over-The-Air)","DDoS (Distributed Denial of Service)","SQL Injection","JTAG Debugging"],a:0},
+  {id:98,m:2,q:"O'rnatilgan tizimlarda kriptografik kalitlarni xavfsiz saqlash va shifrlash amallarini dasturiy emas, balki apparat darajasida bajarish uchun qaysi maxsus mikrosxemadan foydalaniladi?",o:["TPM (Trusted Platform Module) yoki Secure Element (SE)","ADC (Analog-to-Digital Converter)","PWM (Pulse Width Modulation) kontrolleri","HC-SR04 ultratovush moduli"],a:0},
+  {id:99,m:2,q:"Xaker tomonidan qurilmaning quvvat sarfini, elektromagnit nurlanishini o'lchash yoki kuchlanishni o'ynatish (glitching) orqali qurilma ichidagi maxfiy kalitlarni o'g'irlashga qaratilgan hujum turi nima deb ataladi?",o:["Yon-kanal hujumlari (Side-Channel Attacks / Physical Attacks)","Kross-sayt skripting (XSS)","Ijtimoiy muhandislik (Phishing)","O'rtadagi odam hujumi (Man-in-the-Middle)"],a:0},
+  {id:100,m:2,q:"Qurilma yoqilganda (ishga tushganda) uning xotirasidagi dasturiy ta'minotni tekshiruvchi va faqatgina ishlab chiqaruvchi tomonidan tasdiqlangan (kriptografik imzolangan) asl dastur ishlashini kafolatlovchi himoya mexanizmi nima deb ataladi?",o:["Secure Boot (Xavfsiz yuklanish)","Fast Boot (Tezkor yuklanish)","Safe Mode (Xavfsiz rejim)","Auto-connect (Avtomatik ulanish)"],a:0},
+  // Mavzu 3
+  {id:101,m:3,q:"Mikrokontroller dasturlashda volatile kalit so'zi nima uchun kerak?",o:["O'zgaruvchini optimallashdan himoya qilish uchun (apparat tomonidan o'zgartirilishi mumkin)","Xotirani tejash uchun","Dasturni tezlashtirish uchun","O'zgaruvchini o'zgarmas qilish uchun"],a:0},
+  {id:102,m:3,q:"Robot g'ildiraklarini boshqarishda qo'llaniladigan L298N moduli nima?",o:["Motor drayveri modul","Mikrokontroller","Sensor","Bluetooth modul"],a:0},
+  {id:103,m:3,q:"IoT arxitekturasining eng quyi (birinchi) qatlami qaysi?",o:["Perception (Sensor) layer — datchiklar qatlami","Application layer — ilova qatlami","Network layer — tarmoq qatlami","Cloud layer — bulut qatlami"],a:0},
+  {id:104,m:3,q:"Avtomobil ichidagi ECU bloklari o'zaro qaysi standart protokol bilan bog'lanadi?",o:["CAN (Controller Area Network)","HTTP","FTP","SMTP"],a:0},
+  {id:105,m:3,q:"Aqlli shahar tizimida chiqindi qutilarining to'lganligini qaysi sensor aniqlaydi?",o:["Ultratovushli masofa sensori","Namlik sensori","Gaz sensori","Termometr"],a:0},
+  {id:106,m:3,q:"IoT qurilmalari uchun eng tejamkor va yengil aloqa protokoli qaysi?",o:["MQTT (Message Queuing Telemetry Transport)","TCP (Transmission Control Protocol)","POP3 (Post Office Protocol version 3)","SSH (Secure Shell)"],a:0},
+  {id:107,m:3,q:"Mikrokontrollerga faqat tasdiqlangan dasturni yuklashni ta'minlovchi tizim qaysi?",o:["Secure Boot (Xavfsiz yuklanish)","Firewall","Antivirus","BIOS"],a:0},
+  {id:108,m:3,q:"Aqlli svetoforlarda mashinalar navbatini aniqlashda nima ishlatiladi?",o:["Induktiv halqa datchigi (asfalt ostida)","Barometr","Yorug'lik sensori","Namlik sensori"],a:0},
+  {id:109,m:3,q:"Simsiz sensor tarmoqlarida (WSN) ma'lumotni internetga chiquvchi \"ko'prik\" nima deb ataladi?",o:["Gateway (Shlyuz)","Repeater","Switch","Hub"],a:0},
+  {id:110,m:3,q:"Avtomobillarda tormozlanish xavfsizligini ta'minlovchi tizim qaysi?",o:["ABS (Anti-lock Braking System)","GPS","ECU","OBD-II"],a:0},
+  {id:111,m:3,q:"Qurilma quvvat sarfini tahlil qilib kalitlarni o'g'irlash qanday hujum turi?",o:["Side-channel (Yon-kanal) hujumi","DDoS","Phishing","SQL injection"],a:0},
+  {id:112,m:3,q:"IoT ma'lumotlarini bulutga yubormasdan, qurilmaning o'zida qayta ishlash nima deyiladi?",o:["Edge computing (Chekka hisoblash)","Cloud computing","Deep learning","Big Data"],a:0},
+  {id:113,m:3,q:"Robot masofasini o'lchashda HC-SR04 datchigi qanday to'lqinlardan foydalanadi?",o:["Ultratovush to'lqinlaridan","Infraqizil nurdan","Radio to'lqindan","Lazerndan"],a:0},
+  {id:114,m:3,q:"Avtomobil nosozliklarini aniqlash uchun skaner ulanadigan universal port nomi nima?",o:["OBD-II (On-Board Diagnostics)","HDMI","USB","Ethernet"],a:0},
+  {id:115,m:3,q:"Aqlli uyda chiroqlarni masofadan smartfon orqali boshqarishda qaysi modul qulay?",o:["Wi-Fi modul (ESP8266/ESP32)","Gyroskop","Akselerometr","Akkumulyator"],a:0},
+  {id:116,m:3,q:"Har bir tugun boshqa barcha tugunlar bilan bog'lanadigan sensor tarmog'i topologiyasi qanday ataladi?",o:["Mesh (To'r) topologiyasi","Star (Yulduz) topologiyasi","Bus (Shina) topologiyasi","Ring (Halqa) topologiyasi"],a:0},
+  {id:117,m:3,q:"O'rnatilgan tizimlarda vaqtni aniq boshqaruvchi maxsus operatsion tizim qanday ataladi?",o:["RTOS (Real-Time Operating System)","Windows 11","macOS","Ubuntu"],a:0},
+  {id:118,m:3,q:"Aqlli qishloq xo'jaligida tuproq holatini bilish uchun qaysi sensor kerak?",o:["Namlik va sho'rlanish sensori","Mikrofon","Kamera","Spidometr"],a:0},
+  {id:119,m:3,q:"Qurilma proshivkasini masofadan (simsiz) yangilash texnologiyasi qanday ataladi?",o:["FOTA (Firmware Over-The-Air)","SATA","P2P","RAM"],a:0},
+  {id:120,m:3,q:"IoT qurilmalarida ma'lumotlarni shifrlash uchun maxsus apparat chiplari qanday ataladi?",o:["TPM (Trusted Platform Module) yoki Secure Element","GPU","Sound card","Cooler"],a:0},
+  {id:121,m:3,q:"Mikrokontroller dasturlashda volatile kalit so'zining vazifasi nima?",o:["Kompilyatorni o'zgaruvchini optimallashtirishdan to'xtatish (apparat o'zgartirishi mumkin)","O'zgaruvchini faqat o'qiladigan qilish","O'zgaruvchini operativ xotiradan o'chirish","Dastur kodini siqish"],a:0},
+  {id:122,m:3,q:"Robototexnikada L298N moduli nima uchun ishlatiladi?",o:["DC motorlar yo'nalishi va tezligini boshqarish uchun","Wi-Fi ga ulanish uchun","Masofani o'lchash uchun","Ovoz yozish uchun"],a:0},
+  {id:123,m:3,q:"IoT (Narsalar interneti) arxitekturasining 3-qatlami (Processing layer) nima qiladi?",o:["Ma'lumotni tahlil qiladi va saqlaydi","Ma'lumotni datchikdan o'qiydi","Faqat elektr quvvatini boshqaradi","Qurilmani jismoniy himoya qiladi"],a:0},
+  {id:124,m:3,q:"Avtomobil ichidagi ECU bloklari aloqasi uchun eng ishonchli protokol qaysi?",o:["CAN-bus (Controller Area Network)","HTTP","Bluetooth","SPI"],a:0},
+  {id:125,m:3,q:"Aqlli shaharda ko'chalarni yoritish tizimi qaysi datchik yordamida avtomatlashadi?",o:["Foto-rezistor (LDR - Light Dependent Resistor)","Namlik datchigi","Gaz datchigi","Akselerometr"],a:0},
+  {id:126,m:3,q:"IoT uchun eng kam energiya sarflovchi \"yengil\" xabar almashish protokoli qaysi?",o:["MQTT (Message Queuing Telemetry Transport)","FTP","Telnet","SMTP"],a:0},
+  {id:127,m:3,q:"\"Secure Boot\" texnologiyasining asosiy maqsadi nima?",o:["Qurilma yoqilganda faqat tasdiqlangan va xavfsiz proshivkani ishga tushirish","Qurilmani tezroq yoqish","Batareya quvvatini tejash","Wi-Fi parolini shifrlash"],a:0},
+  {id:128,m:3,q:"Aqlli svetoforlarda tirbandlikni aniqlashning eng samarali usuli qaysi?",o:["Asfalt ostidagi induktiv halqa datchigi","Haroratni o'lchash","Shovqin darajasini tekshirish","Namlikni o'lchash"],a:0},
+  {id:129,m:3,q:"Simsiz sensor tarmoqlarida (WSN) ma'lumotlarni markazga yig'uvchi asosiy tugun qanday ataladi?",o:["Gateway (Shlyuz)","Sensor node","Router","Switch"],a:0},
+  {id:130,m:3,q:"Avtomobil tormoz tizimida g'ildirak sirpanib ketishini oldini oluvchi blok qanday ataladi?",o:["ABS (Anti-lock Braking System)","GPS","SRS (Airbag tizimi)","OBD-II"],a:0},
+  {id:131,m:3,q:"Qurilmaning elektromagnit nurlanishi orqali maxfiy kalitlarni bilib olish qanday hujum turi?",o:["Side-channel (Yon-kanal) hujumi","Phishing","Bruteforce","Trojan"],a:0},
+  {id:132,m:3,q:"\"Edge Computing\"ning asosiy afzalligi nimada?",o:["Ma'lumotni bulutga yubormasdan, joyida qayta ishlab kechikishni (latency) kamaytirish","Ma'lumotlarni faqat qog'ozda saqlash","Internet tezligini oshirish","Qurilma narxini arzonlashtirish"],a:0},
+  {id:133,m:3,q:"HC-SR04 ultratovush datchigi masofani qanday aniqlaydi?",o:["Tovush to'lqinini yuborib, aks etib kelish vaqtini o'lchash orqali","Yorug'lik tezligi orqali","Magnit maydoni orqali","Ranglarni farqlash orqali"],a:0},
+  {id:134,m:3,q:"Avtomobil diagnostikasi uchun ishlatiladigan universal standart port nomi qaysi?",o:["OBD-II (On-Board Diagnostics)","USB-C","HDMI","VGA"],a:0},
+  {id:135,m:3,q:"ESP8266 yoki ESP32 modullarining asosiy vazifasi nima?",o:["Qurilmani Wi-Fi tarmog'iga ulash va internet orqali ma'lumot almashish","Faqat ovoz chiqarish","Motorlarni aylantirish","GPS koordinatalarini olish"],a:0},
+  {id:136,m:3,q:"Har bir tugun boshqa barcha tugunlar bilan bog'lanadigan tarmoq topologiyasi qaysi?",o:["Mesh (To'r) topologiyasi","Star (Yulduz) topologiyasi","Bus (Shina) topologiyasi","Ring (Halqa) topologiyasi"],a:0},
+  {id:137,m:3,q:"O'rnatilgan tizimlarda vazifalarni millisoniyalarda kafolatli bajaruvchi operatsion tizim turi qaysi?",o:["RTOS (Real-Time OS)","Windows 10","Android","ChromeOS"],a:0},
+  {id:138,m:3,q:"Aqlli qishloq xo'jaligida o'simlikning suvsizlanganini qaysi datchik aniqlab beradi?",o:["Tuproq namligi datchigi (Soil Moisture Sensor)","Barometr","Gyroskop","Mikrofon"],a:0},
+  {id:139,m:3,q:"FOTA (Firmware Over-The-Air) texnologiyasi nima uchun kerak?",o:["Qurilma dasturiy ta'minotini masofadan simsiz yangilash uchun","Qurilmani zaryadlash uchun","Qurilmani jismonan sovutish uchun","Radio kanallarini eshitish uchun"],a:0},
+  {id:140,m:3,q:"Kriptografik kalitlarni apparat darajasida himoyalovchi maxsus chip qanday ataladi?",o:["TPM (Trusted Platform Module) yoki Secure Element","GPU","RAM","BIOS chip"],a:0},
+  {id:141,m:3,q:"Robot qo'lini aniq burchak ostida (masalan, 45 gradus) burish uchun qaysi dvigatel kerak?",o:["Servo motor (burchak nazorat qilinadi)","DC motor","LED chiroq","Rele"],a:0},
+  {id:142,m:3,q:"I2C aloqa protokolida ma'lumot uzatish uchun nechta asosiy sim (liniya) kerak?",o:["2 ta (SDA — ma'lumot va SCL — takt)","1 ta","8 ta","10 ta"],a:0},
+  {id:143,m:3,q:"Aqlli uy tizimida xonada odam borligini aniqlovchi datchik qaysi?",o:["PIR sensor (Passiv Infraqizil datchigi)","Namlik sensor","Gaz sensor","Bosim sensor"],a:0},
+  {id:144,m:3,q:"\"Aqlli shahar\"da avtobuslar qayerda kelayotganini real vaqtda ko'rsatuvchi texnologiya qaysi?",o:["GPS va GPRS (joylashuvni masofadan uzatish)","Bluetooth","QR-kod","FM radio"],a:0},
+  {id:145,m:3,q:"Mikrokontrollerni tashqi xavfli kuchlanishdan himoyalovchi qurilma qaysi?",o:["Optopara (Opto-isolator — galvanik ajratish)","Tranzistor","Rezistor","Kondensator"],a:0},
+  {id:146,m:3,q:"IoT tizimida ma'lumotlar xavfsizligi uchun eng keng qo'llaniladigan shifrlash standarti qaysi?",o:["AES-128 / AES-256 (Advanced Encryption Standard)","MP3","JPEG","MPEG"],a:0},
+  {id:147,m:3,q:"Avtomobilning xavfsizlik yostiqchalari (Airbag) qaysi datchikdan signal olib ishga tushadi?",o:["Akselerometr (to'satdan tezlanish/to'qnashuv datchigi)","Termometr","Yomg'ir datchigi","Namlik datchigi"],a:0},
+  {id:148,m:3,q:"\"Smart Grid\" tizimi nimani aqlli boshqarish uchun xizmat qiladi?",o:["Elektr energiyasi tarmog'ini (iste'mol va ishlab chiqarishni muvozanatlash)","Suv oqimini","Yo'l harakatini","Internet tezligini"],a:0},
+  {id:149,m:3,q:"O'rnatilgan tizimlarda \"Watchdog Timer\" nima uchun kerak?",o:["Dastur qotib qolsa (hang), tizimni avtomatik qayta yuklash (reset) uchun","Vaqtni ko'rsatish uchun","Budilnik vazifasini bajarish uchun","Ekran yorug'ligini boshqarish uchun"],a:0},
+  {id:150,m:3,q:"Bulutli platformalarda (AWS/Azure/Google Cloud) IoT Dashboard nima?",o:["Qurilmadan kelgan ma'lumotlarni grafik va vizual ko'rinishida ko'rsatuvchi boshqaruv paneli","Qurilmaning jismoniy korpusi","Batareya zaryadlovchi qurilma","Internet kabeli"],a:0}
 ];
 
 // ── STATE ────────────────────────────────────────────────────────
-const LS='embedded_v3';
+const LS='emb_v4';
 let S=load();
-let cdInterval=null;
-let cdTotal=0, cdLeft=0;
-let pendingMavzu=null;
-let currentTab='test';
+let cdInt=null, cdTotal=0, cdLeft=0;
+let pendingMavzu=null, currentTab='test';
 
-function def(){return{activeMavzu:null,curIdx:0,questions:[],correct:0,wrong:0,history:[],missed:[],flagged:[],missedMode:false,dotStatus:{}};}
-function load(){try{return Object.assign(def(),JSON.parse(localStorage.getItem(LS))||{});}catch(e){return def();}}
+function def(){return{activeMavzu:null,curIdx:0,questions:[],correct:0,wrong:0,history:[],missed:[],flagged:[],missedMode:false,
+  // KEY FIX: dotStatus stores {status:'ok'|'no', chosenIdx, correctIdx, opts} per qid
+  dotStatus:{}};}
+function load(){try{return Object.assign(def(),JSON.parse(localStorage.getItem(LS))||{});}catch{return def();}}
 function save(){localStorage.setItem(LS,JSON.stringify(S));}
 
 // ── SHUFFLE ──────────────────────────────────────────────────────
@@ -458,119 +420,90 @@ function shuffleOpts(q){
   return{opts:s,ci:s.indexOf(correct)};
 }
 
-// ── COUNTDOWN ───────────────────────────────────────────────────
-function startCD(minutes){
-  cdTotal=minutes*60; cdLeft=cdTotal;
-  clearInterval(cdInterval);
-  document.getElementById('cdBar').style.display='';
+// ── COUNTDOWN ────────────────────────────────────────────────────
+function startCD(min){
+  cdTotal=min*60; cdLeft=cdTotal;
+  clearInterval(cdInt);
+  document.getElementById('cdWrap').style.display='';
   updateCD();
-  cdInterval=setInterval(()=>{
-    cdLeft--;
-    updateCD();
-    if(cdLeft<=0){timeUp();}
-  },1000);
+  cdInt=setInterval(()=>{if(--cdLeft<=0)timeUp(); else updateCD();},1000);
 }
+function stopCD(){clearInterval(cdInt);document.getElementById('cdWrap').style.display='none';}
 function updateCD(){
   const m=Math.floor(cdLeft/60).toString().padStart(2,'0');
   const s=(cdLeft%60).toString().padStart(2,'0');
-  const el=document.getElementById('cdDisplay');
-  el.textContent=`${m}:${s}`;
-  const pct=cdTotal>0?(cdLeft/cdTotal*100):0;
+  const el=document.getElementById('cdTime');
   const fill=document.getElementById('cdFill');
+  el.textContent=`${m}:${s}`;
+  const pct=cdTotal>0?(cdLeft/cdTotal*100):100;
   fill.style.width=pct+'%';
-  if(cdLeft<=30){el.className='cd-time danger';fill.className='cd-bar-fill danger';}
-  else if(cdLeft<=60){el.className='cd-time warn';fill.className='cd-bar-fill warn';}
-  else{el.className='cd-time';fill.className='cd-bar-fill';}
+  if(cdLeft<=30){el.className='cd-time danger';fill.className='cd-fill danger';}
+  else if(cdLeft<=60){el.className='cd-time warn';fill.className='cd-fill warn';}
+  else{el.className='cd-time';fill.className='cd-fill';}
 }
-function stopCD(){clearInterval(cdInterval);document.getElementById('cdBar').style.display='none';}
 function timeUp(){
   stopCD();
   const area=document.getElementById('testArea');
-  const mavzu=MAVZULAR.find(x=>x.id===S.activeMavzu)||{name:'',full:''};
+  const mv=MAVZULAR.find(x=>x.id===S.activeMavzu)||{full:''};
   area.innerHTML=`<div class="timeup-card">
-    <div class="timeup-ico">⏰</div>
-    <div class="timeup-title">Vaqt tugadi!</div>
-    <div class="timeup-sub">${mavzu.full}<br><br>
-      ${S.correct} ta to'g'ri / ${S.curIdx} ta savol ulgurildi.<br>
-      Test boshidan boshlanadi.
-    </div>
+    <div style="font-size:56px;margin-bottom:14px">⏰</div>
+    <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--red);margin-bottom:8px">Vaqt tugadi!</div>
+    <div style="color:var(--muted);font-size:14px;margin-bottom:24px;line-height:1.7">${mv.full}<br><br>${S.correct} ta to'g'ri / ${S.curIdx} ta savol ulgurildi.<br>Test boshidan boshlanadi.</div>
     <div class="done-acts">
       <button class="btn-warn" onclick="showTimeModal(${S.activeMavzu})">🔄 Qayta boshlash</button>
-      <button class="btn-sec" onclick="switchTab('missed')">❌ O'tilmaganlarni ko'rish</button>
+      <button class="btn-sec" onclick="switchTab('missed')">❌ O'tilmaganlar</button>
     </div>
   </div>`;
-  // Reset progress for this mavzu
-  S.curIdx=0; S.correct=0; S.wrong=0; S.history=[];
-  S.questions=[]; S.dotStatus={};
-  save(); updateStats(); buildQnav();
-  updateProgress();
+  S.curIdx=0;S.correct=0;S.wrong=0;S.history=[];S.questions=[];S.dotStatus={};
+  save();updateStats();buildQnav();updateProgress();
 }
 
 // ── TIME MODAL ───────────────────────────────────────────────────
-function showTimeModal(mavzuId){
-  pendingMavzu=mavzuId;
-  const m=MAVZULAR.find(x=>x.id===mavzuId);
-  const cnt=RAW.filter(q=>q.m===mavzuId).length;
-  document.getElementById('timeModalDesc').textContent=
-    `"${m.full}" — ${cnt} ta savol.\nVaqt tugasa test yopiladi va boshidan boshlanadi.`;
+function showTimeModal(mid){
+  pendingMavzu=mid;
+  const mv=MAVZULAR.find(x=>x.id===mid)||{full:'O\'tilmaganlar'};
+  const cnt=mid>0?RAW.filter(q=>q.m===mid).length:S.missed.length;
+  document.getElementById('timeModalDesc').innerHTML=`<strong>${mv.full}</strong><br>${cnt} ta savol. Vaqt tugasa boshidan boshlanadi.`;
   document.getElementById('timeModal').style.display='flex';
 }
-function closeModalOutside(e){if(e.target===document.getElementById('timeModal'))document.getElementById('timeModal').style.display='none';}
-function pickTime(min){document.getElementById('timeModal').style.display='none';initMavzu(pendingMavzu,min);}
-function pickCustomTime(){
+function modalOutside(e){if(e.target===document.getElementById('timeModal'))document.getElementById('timeModal').style.display='none';}
+function pickTime(min){document.getElementById('timeModal').style.display='none';if(pendingMavzu===-1)initMissed(min);else initMavzu(pendingMavzu,min);}
+function pickCustom(){
   const v=parseInt(document.getElementById('customMin').value);
-  if(!v||v<1){showToast('❌ Kamida 1 daqiqa kiriting');return;}
+  if(!v||v<1){showToast('❌ Kamida 1 daqiqa');return;}
   document.getElementById('timeModal').style.display='none';
-  initMavzu(pendingMavzu,v);
+  if(pendingMavzu===-1)initMissed(v);else initMavzu(pendingMavzu,v);
 }
 
 // ── MAVZU INIT ───────────────────────────────────────────────────
-function initMavzu(mavzuId,minutes){
+function initMavzu(mid,min){
   stopCD();
-  S.activeMavzu=mavzuId;
-  S.curIdx=0; S.correct=0; S.wrong=0; S.history=[];
-  S.missedMode=false; S.dotStatus={};
-  const qs=RAW.filter(q=>q.m===mavzuId);
-  S.questions=shuf(qs).map(q=>q.id);
-  save();
-  buildMavzuBtns(); updateStats(); buildQnav();
-  updateProgress();
-  document.getElementById('progWrap').style.display='';
-  document.getElementById('qnavWrap').style.display='';
-  renderQ();
-  startCD(minutes);
+  S.activeMavzu=mid;S.curIdx=0;S.correct=0;S.wrong=0;S.history=[];S.missedMode=false;S.dotStatus={};
+  S.questions=shuf(RAW.filter(q=>q.m===mid)).map(q=>q.id);
+  save();buildMavzuBtns();updateStats();buildQnav();updateProgress();
+  show(['progWrap','qnavWrap']);renderQ();startCD(min);
 }
-
-// ── MISSED MODE ──────────────────────────────────────────────────
-function startMissedMode(){
+function initMissed(min){
   if(!S.missed.length){showToast("✅ O'tilmaganlar yo'q!");return;}
   stopCD();
-  S.missedMode=true;
-  S.curIdx=0; S.correct=0; S.wrong=0; S.history=[];
+  S.missedMode=true;S.curIdx=0;S.correct=0;S.wrong=0;S.history=[];S.dotStatus={};
   S.questions=shuf([...S.missed]);
-  S.dotStatus={};
-  save(); buildMavzuBtns(); updateStats(); buildQnav();
-  updateProgress();
-  document.getElementById('progWrap').style.display='';
-  document.getElementById('qnavWrap').style.display='';
-  switchTab('test');
-  renderQ();
-  showTimeModal(-1); // ask for time even in missed mode
+  save();buildMavzuBtns();updateStats();buildQnav();updateProgress();
+  show(['progWrap','qnavWrap']);switchTab('test');renderQ();startCD(min);
 }
 
-// ── STATS & UI ───────────────────────────────────────────────────
+function show(ids){ids.forEach(id=>document.getElementById(id).style.display='');}
+
+// ── STATS ────────────────────────────────────────────────────────
 function updateStats(){
   const t=S.correct+S.wrong;
   document.getElementById('sTotal').textContent=t;
   document.getElementById('sCorrect').textContent=S.correct;
   document.getElementById('sWrong').textContent=S.wrong;
   document.getElementById('sPct').textContent=t>0?Math.round(S.correct/t*100)+'%':'—';
-  // streak
   document.getElementById('streakWrap').innerHTML=S.history.slice(-24).map(h=>`<div class="s-dot ${h.correct?'ok':'no'}"></div>`).join('');
-  // missed badge
   const b=document.getElementById('missed-badge');
-  b.textContent=S.missed.length;
-  b.style.display=S.missed.length>0?'':'none';
+  b.textContent=S.missed.length;b.style.display=S.missed.length>0?'':'none';
 }
 function updateProgress(){
   if(!S.activeMavzu||!S.questions.length)return;
@@ -578,16 +511,13 @@ function updateProgress(){
   const pct=Math.round(done/S.questions.length*100);
   document.getElementById('progFill').style.width=pct+'%';
   document.getElementById('progPct').textContent=pct+'%';
-  const m=MAVZULAR.find(x=>x.id===S.activeMavzu);
-  const lbl=(S.missedMode?'❌ O\'tilmaganlar':(m?m.full:''))
-    +` — ${Math.min(S.curIdx+1,S.questions.length)}/${S.questions.length}`;
-  document.getElementById('progLbl').textContent=lbl;
+  const mv=MAVZULAR.find(x=>x.id===S.activeMavzu);
+  document.getElementById('progLbl').textContent=
+    (S.missedMode?'❌ O\'tilmaganlar':(mv?mv.full:''))+
+    ` — ${Math.min(S.curIdx+1,S.questions.length)}/${S.questions.length}`;
 }
-
-// ── MAVZU BUTTONS ────────────────────────────────────────────────
 function buildMavzuBtns(){
-  const wrap=document.getElementById('mavzuBtns');
-  wrap.innerHTML='';
+  const wrap=document.getElementById('mavzuBtns');wrap.innerHTML='';
   MAVZULAR.forEach(m=>{
     const cnt=RAW.filter(q=>q.m===m.id).length;
     const btn=document.createElement('button');
@@ -601,52 +531,61 @@ function buildMavzuBtns(){
 
 // ── QUESTION NAV ─────────────────────────────────────────────────
 function buildQnav(){
-  const wrap=document.getElementById('qnavDots');
-  wrap.innerHTML='';
+  const wrap=document.getElementById('qnavDots');wrap.innerHTML='';
   if(!S.questions.length){document.getElementById('qnavWrap').style.display='none';return;}
+  document.getElementById('qnavWrap').style.display='';
   S.questions.forEach((qid,idx)=>{
-    const status=S.dotStatus[qid]; // 'ok'|'no'|undefined
+    const ds=S.dotStatus[qid]; // {status, chosenIdx, correctIdx, opts}
+    const dot=document.createElement('div');
     let cls='qnav-dot';
     if(idx===S.curIdx) cls+=' current';
-    else if(idx>S.curIdx) cls+=' future';
-    else if(status==='ok') cls+=' done-ok';
-    else if(status==='no') cls+=' done-no';
-    const dot=document.createElement('div');
+    else if(ds){
+      cls+=(ds.status==='ok'?' done-ok':' done-no');
+    }
+    // idx > S.curIdx && !ds => no class (gray)
     dot.className=cls;
     dot.textContent=idx+1;
+    dot.title=ds?(ds.status==='ok'?'✅ To\'g\'ri':'❌ Noto\'g\'ri'):'Hali javob berilmagan';
     dot.onclick=()=>jumpTo(idx);
     wrap.appendChild(dot);
   });
 }
+
 function jumpTo(idx){
-  if(idx>=S.questions.length||idx<0)return;
+  if(idx<0||idx>=S.questions.length)return;
   S.curIdx=idx;
-  save(); updateProgress(); buildQnav();
-  renderQ();
+  save();updateProgress();buildQnav();
+  // Render in read-only if already answered, normal if not
+  const qid=S.questions[idx];
+  const ds=S.dotStatus[qid];
+  if(ds){renderReadOnly(qid,ds);}
+  else{renderQ();}
 }
 
-// ── RENDER Q ─────────────────────────────────────────────────────
+// ── RENDER Q (normal) ─────────────────────────────────────────────
 function renderQ(){
   const area=document.getElementById('testArea');
   if(S.curIdx>=S.questions.length){renderDone(area);stopCD();return;}
   const qid=S.questions[S.curIdx];
   const q=RAW.find(x=>x.id===qid);
   if(!q){S.curIdx++;renderQ();return;}
+  // If already answered, show read-only
+  if(S.dotStatus[qid]){renderReadOnly(qid,S.dotStatus[qid]);return;}
   const{opts,ci}=shuffleOpts(q);
   const L=['A','B','C','D'];
   const fl=S.flagged.includes(qid);
-  const optHtml=opts.map((o,i)=>`
-    <button class="opt" onclick="pick(${i},${ci},${qid})">
-      <span class="opt-ltr">${L[i]}</span>${o}
-    </button>`).join('');
-  const mavzu=S.missedMode?'❌ O\'tilmaganlar':(MAVZULAR.find(x=>x.id===S.activeMavzu)||{name:''}).name;
+  const mv=S.missedMode?'❌ O\'tilmaganlar':(MAVZULAR.find(x=>x.id===S.activeMavzu)||{name:''}).name;
   area.innerHTML=`<div class="q-card">
     <div class="q-head">
-      <span class="q-topic">${mavzu} · #${qid}</span>
+      <span class="q-topic">${mv} · #${qid}</span>
       <span class="q-num">${S.curIdx+1} / ${S.questions.length}</span>
     </div>
     <div class="q-text">${q.q}</div>
-    <div class="opts">${optHtml}</div>
+    <div class="opts">${opts.map((o,i)=>`
+      <button class="opt" onclick="pick(${i},${ci},${qid},${JSON.stringify(opts).split('"').join('`')})">
+        <span class="opt-ltr">${L[i]}</span>${o}
+      </button>`).join('')}
+    </div>
     <div class="fb" id="fb"></div>
     <div class="q-footer">
       <button class="flag-btn${fl?' flagged':''}" id="flagBtn" onclick="toggleFlag(${qid})">
@@ -659,43 +598,93 @@ function renderQ(){
   </div>`;
 }
 
-function pick(i,ci,qid){
+// ── RENDER READ-ONLY (already answered) ──────────────────────────
+function renderReadOnly(qid,ds){
+  const area=document.getElementById('testArea');
+  const q=RAW.find(x=>x.id===qid);
+  const L=['A','B','C','D'];
+  const mv=S.missedMode?'❌ O\'tilmaganlar':(MAVZULAR.find(x=>x.id===S.activeMavzu)||{name:''}).name;
+  const idx=S.questions.indexOf(qid);
+  // ds.opts is the shuffled options array used when this Q was answered
+  const opts=ds.opts||q.o;
+  const optsHtml=opts.map((o,i)=>{
+    let cls='opt';
+    if(i===ds.correctIdx) cls+=' readonly-ok';
+    else if(i===ds.chosenIdx&&ds.chosenIdx!==ds.correctIdx) cls+=' readonly-no';
+    return `<button class="${cls}" disabled>
+      <span class="opt-ltr">${L[i]}</span>${o}
+    </button>`;
+  }).join('');
+  // Find current position in remaining (first unanswered)
+  const nextUnanswered=S.questions.findIndex((id,i)=>i>idx&&!S.dotStatus[id]);
+  area.innerHTML=`<div class="q-card">
+    <div class="q-head">
+      <span class="q-topic">${mv} · #${qid}</span>
+      <span class="q-num">${idx+1} / ${S.questions.length}</span>
+    </div>
+    <div class="q-text">${q.q}</div>
+    <div class="opts">${optsHtml}</div>
+    <div class="fb show ${ds.status==='ok'?'ok':'no'}">
+      <span style="font-size:18px">${ds.status==='ok'?'✅':'❌'}</span>
+      <span>${ds.status==='ok'?"To'g'ri javob bergan edingiz!":`Noto'g'ri. To'g'ri javob: ${L[ds.correctIdx]}) ${opts[ds.correctIdx]}`}</span>
+    </div>
+    <div class="fb show viewed" style="margin-top:6px">
+      <span style="font-size:16px">👁️</span>
+      <span>Ko'rib chiqish rejimi — bu savol allaqachon javoblangan</span>
+    </div>
+    <div class="q-footer">
+      ${idx>0?`<button class="flag-btn" onclick="jumpTo(${idx-1})">← Oldingi</button>`:'<div></div>'}
+      ${nextUnanswered>=0
+        ?`<button class="next-btn" style="display:block" onclick="jumpTo(${nextUnanswered})">Keyingi javobsiz →</button>`
+        :(S.curIdx<S.questions.length-1
+          ?`<button class="continue-btn" style="display:block" onclick="jumpTo(${idx+1})">Keyingi →</button>`
+          :`<button class="btn-pri" onclick="finishTest()">Natijani ko'rish →</button>`)
+      }
+    </div>
+  </div>`;
+}
+
+function finishTest(){
+  renderDone(document.getElementById('testArea'));stopCD();
+}
+
+// ── PICK ─────────────────────────────────────────────────────────
+function pick(i,ci,qid,optsJson){
   const btns=document.querySelectorAll('.opt');
   if(btns[0].disabled)return;
   btns.forEach(b=>b.disabled=true);
   const ok=i===ci;
+  // Parse opts back (backtick-encoded)
+  let opts;
+  try{opts=JSON.parse(optsJson.split('`').join('"'));}catch{opts=RAW.find(x=>x.id===qid).o;}
   btns[i].classList.add(ok?'correct':'wrong');
   if(!ok)btns[ci].classList.add('correct');
   const fb=document.getElementById('fb');
+  // Save to dotStatus with full info for read-only replay
+  S.dotStatus[qid]={status:ok?'ok':'no',chosenIdx:i,correctIdx:ci,opts};
   if(ok){
-    S.correct++; S.history.push({id:qid,correct:true});
-    S.dotStatus[qid]='ok';
+    S.correct++;S.history.push({id:qid,correct:true});
     S.missed=S.missed.filter(x=>x!==qid);
-    fb.className='fb show ok';
-    fb.innerHTML='<span class="fb-ico">✅</span><span>To\'g\'ri! Zo\'r!</span>';
-  } else {
-    S.wrong++; S.history.push({id:qid,correct:false});
-    S.dotStatus[qid]='no';
+    fb.className='fb show ok';fb.innerHTML='<span style="font-size:18px">✅</span><span>To\'g\'ri! Zo\'r!</span>';
+  }else{
+    S.wrong++;S.history.push({id:qid,correct:false});
     if(!S.missed.includes(qid))S.missed.push(qid);
-    const correctText=btns[ci].textContent.trim();
     fb.className='fb show no';
-    fb.innerHTML=`<span class="fb-ico">❌</span><span>Noto'g'ri. To'g'ri: <strong>${correctText}</strong></span>`;
+    fb.innerHTML=`<span style="font-size:18px">❌</span><span>Noto'g'ri. To'g'ri: <strong>${['A','B','C','D'][ci]}) ${opts[ci]}</strong></span>`;
   }
-  updateStats(); save(); buildQnav();
+  updateStats();save();buildQnav();
   document.getElementById('nxtBtn').style.display='block';
 }
 
 function nextQ(){S.curIdx++;save();updateProgress();buildQnav();renderQ();}
-
 function toggleFlag(qid){
   const idx=S.flagged.indexOf(qid);
-  if(idx>=0)S.flagged.splice(idx,1); else S.flagged.push(qid);
+  if(idx>=0)S.flagged.splice(idx,1);else S.flagged.push(qid);
   save();
   const fl=S.flagged.includes(qid);
   const btn=document.getElementById('flagBtn');
-  btn.className='flag-btn'+(fl?' flagged':'');
-  btn.innerHTML=fl?'🚩 Belgilangan':'🏳️ Belgilash';
-  showToast(fl?'🚩 Savol belgilandi':'Belgi olib tashlandi');
+  if(btn){btn.className='flag-btn'+(fl?' flagged':'');btn.innerHTML=fl?'🚩 Belgilangan':'🏳️ Belgilash';}
+  showToast(fl?'🚩 Belgilandi':'Belgi olib tashlandi');
 }
 
 // ── DONE ─────────────────────────────────────────────────────────
@@ -703,7 +692,7 @@ function renderDone(area){
   stopCD();
   const total=S.questions.length;
   const pct=total>0?Math.round(S.correct/total*100):0;
-  const r=42;const c=2*Math.PI*r;const d=c*(pct/100);
+  const r=42,c=2*Math.PI*r,d=c*(pct/100);
   let badge,bc,color;
   if(pct>=85){badge="A'lo! 🎉";bc="rgba(16,185,129,.15)";color="#10b981";}
   else if(pct>=70){badge="Yaxshi! 👍";bc="rgba(99,102,241,.15)";color="#818cf8";}
@@ -721,46 +710,43 @@ function renderDone(area){
     </div>
     <div class="done-badge" style="background:${bc};color:${color}">${badge}</div>
     <div class="done-title">${S.correct} / ${total} to'g'ri</div>
-    <div class="done-sub">${S.missedMode?'O\'tilmaganlar':'Mavzu'} yakunlandi</div>
+    <div class="done-sub">${S.missedMode?'O\'tilmaganlar rejimi':'Mavzu'} yakunlandi</div>
     <div class="done-acts">
       <button class="btn-sec" onclick="showTimeModal(${S.activeMavzu})">🔄 Qayta</button>
-      ${mc>0?`<button class="btn-warn" onclick="startMissedMode()">❌ O'tilmaganlar (${mc})</button>`:''}
-      ${S.activeMavzu<MAVZULAR.length&&!S.missedMode?
+      ${mc>0?`<button class="btn-warn" onclick="startMissedFlow()">❌ O'tilmaganlar (${mc})</button>`:''}
+      ${!S.missedMode&&S.activeMavzu<MAVZULAR.length?
         `<button class="btn-pri" onclick="showTimeModal(${S.activeMavzu+1})">Keyingi mavzu →</button>`:
         `<button class="btn-pri" onclick="showTimeModal(1)">Boshidan →</button>`}
     </div>
   </div>`;
 }
+function startMissedFlow(){showTimeModal(-1);}
 
 // ── MISSED TAB ────────────────────────────────────────────────────
 function renderMissedTab(){
   const area=document.getElementById('missedArea');
   if(!S.missed.length){
-    area.innerHTML=`<div class="missed-empty">
-      <div style="font-size:44px;margin-bottom:10px">🎉</div>
+    area.innerHTML=`<div class="missed-empty"><div style="font-size:44px;margin-bottom:10px">🎉</div>
       <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:6px">Hammasi to'g'ri!</div>
-      <div>Hozircha noto'g'ri savol yo'q</div>
-    </div>`;
+      <div>Hozircha noto'g'ri savol yo'q</div></div>`;
     return;
   }
   const qs=S.missed.map(id=>RAW.find(q=>q.id===id)).filter(Boolean);
   area.innerHTML=`<div class="missed-actions">
-    <button class="btn-pri" onclick="startMissedMode()">▶ Qayta ishlash (${S.missed.length})</button>
+    <button class="btn-pri" onclick="startMissedFlow()">▶ Qayta ishlash (${S.missed.length})</button>
     <button class="btn-sec" onclick="clearMissed()">🗑️ Tozalash</button>
   </div>
   <div class="missed-list">
     ${qs.map(q=>`<div class="missed-item">
       <div style="font-size:20px;flex-shrink:0">❌</div>
-      <div>
-        <div class="missed-q">${q.q}</div>
-        <div class="missed-meta">Savol #${q.id} · ${MAVZULAR.find(m=>m.id===q.m)?.name||''}</div>
-      </div>
+      <div><div class="missed-q">${q.q}</div>
+      <div class="missed-meta">Savol #${q.id} · ${MAVZULAR.find(m=>m.id===q.m)?.name||''}</div></div>
     </div>`).join('')}
   </div>`;
 }
 function clearMissed(){S.missed=[];save();updateStats();renderMissedTab();showToast('✅ Tozalandi');}
 
-// ── TAB SWITCH ────────────────────────────────────────────────────
+// ── TAB ───────────────────────────────────────────────────────────
 function switchTab(t){
   currentTab=t;
   document.getElementById('tab-test').classList.toggle('active',t==='test');
@@ -772,29 +758,25 @@ function switchTab(t){
 
 // ── TOAST ─────────────────────────────────────────────────────────
 let tT;
-function showToast(msg){
-  const el=document.getElementById('toast');
-  el.textContent=msg; el.classList.add('show');
-  clearTimeout(tT); tT=setTimeout(()=>el.classList.remove('show'),2200);
-}
+function showToast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(tT);tT=setTimeout(()=>el.classList.remove('show'),2200);}
 
 // ── INIT ──────────────────────────────────────────────────────────
-buildMavzuBtns();
-updateStats();
-if(S.activeMavzu&&S.questions.length>0&&S.curIdx<S.questions.length){
-  document.getElementById('progWrap').style.display='';
-  document.getElementById('qnavWrap').style.display='';
-  updateProgress(); buildQnav(); renderQ();
-  showToast('📌 Sessiya tiklandi — vaqt esa qaytadan hisoblanadi');
-  showTimeModal(S.activeMavzu);
-} else if(S.activeMavzu&&S.curIdx>=S.questions.length&&S.questions.length>0){
-  document.getElementById('progWrap').style.display='';
-  document.getElementById('qnavWrap').style.display='';
-  updateProgress(); buildQnav();
-  renderDone(document.getElementById('testArea'));
+buildMavzuBtns();updateStats();
+if(S.activeMavzu&&S.questions.length>0){
+  show(['progWrap','qnavWrap']);
+  updateProgress();buildQnav();
+  if(S.curIdx<S.questions.length){
+    const qid=S.questions[S.curIdx];
+    if(S.dotStatus[qid])renderReadOnly(qid,S.dotStatus[qid]);else renderQ();
+    showToast('📌 Sessiya tiklandi — yangi vaqt kiriting');
+    showTimeModal(S.activeMavzu);
+  } else {
+    renderDone(document.getElementById('testArea'));
+  }
 }
 window.addEventListener('beforeunload',save);
 setInterval(save,15000);
 </script>
 </body>
 </html>
+HTMLEOF
