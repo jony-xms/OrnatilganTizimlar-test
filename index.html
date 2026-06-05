@@ -401,15 +401,27 @@ const RAW=[
 ];
 
 // ── STATE ────────────────────────────────────────────────────────
-const LS='emb_v4';
+const LS='emb_v5'; // bumped — clears old corrupt dotStatus
 let S=load();
 let cdInt=null, cdTotal=0, cdLeft=0;
 let pendingMavzu=null, currentTab='test';
 
-function def(){return{activeMavzu:null,curIdx:0,questions:[],correct:0,wrong:0,history:[],missed:[],flagged:[],missedMode:false,
-  // KEY FIX: dotStatus stores {status:'ok'|'no', chosenIdx, correctIdx, opts} per qid
-  dotStatus:{}};}
-function load(){try{return Object.assign(def(),JSON.parse(localStorage.getItem(LS))||{});}catch{return def();}}
+function def(){return{activeMavzu:null,curIdx:0,questions:[],correct:0,wrong:0,history:[],missed:[],flagged:[],missedMode:false,dotStatus:{}};}
+function load(){
+  try{
+    ['emb_v2','emb_v3','emb_v4'].forEach(k=>localStorage.removeItem(k));
+    const raw=localStorage.getItem(LS);
+    if(!raw)return def();
+    const parsed=JSON.parse(raw);
+    if(parsed.dotStatus){
+      Object.keys(parsed.dotStatus).forEach(k=>{
+        const ds=parsed.dotStatus[k];
+        if(!ds||!Array.isArray(ds.opts)||ds.opts.length===0) delete parsed.dotStatus[k];
+      });
+    }
+    return Object.assign(def(),parsed);
+  }catch{return def();}
+}
 function save(){localStorage.setItem(LS,JSON.stringify(S));}
 
 // ── SHUFFLE ──────────────────────────────────────────────────────
@@ -562,6 +574,12 @@ function jumpTo(idx){
   else{renderQ();}
 }
 
+// ── CURRENT SHUFFLE CACHE (not persisted, per render) ─────────────
+// We store pending opts/ci here so pick() can access without HTML encoding
+let _pendingOpts = null;
+let _pendingCi = -1;
+let _pendingQid = -1;
+
 // ── RENDER Q (normal) ─────────────────────────────────────────────
 function renderQ(){
   const area=document.getElementById('testArea');
@@ -572,6 +590,10 @@ function renderQ(){
   // If already answered, show read-only
   if(S.dotStatus[qid]){renderReadOnly(qid,S.dotStatus[qid]);return;}
   const{opts,ci}=shuffleOpts(q);
+  // Cache for pick()
+  _pendingOpts=[...opts];
+  _pendingCi=ci;
+  _pendingQid=qid;
   const L=['A','B','C','D'];
   const fl=S.flagged.includes(qid);
   const mv=S.missedMode?'❌ O\'tilmaganlar':(MAVZULAR.find(x=>x.id===S.activeMavzu)||{name:''}).name;
@@ -582,7 +604,7 @@ function renderQ(){
     </div>
     <div class="q-text">${q.q}</div>
     <div class="opts">${opts.map((o,i)=>`
-      <button class="opt" onclick="pick(${i},${ci},${qid},${JSON.stringify(opts).split('"').join('`')})">
+      <button class="opt" onclick="pick(${i})">
         <span class="opt-ltr">${L[i]}</span>${o}
       </button>`).join('')}
     </div>
@@ -649,18 +671,19 @@ function finishTest(){
 }
 
 // ── PICK ─────────────────────────────────────────────────────────
-function pick(i,ci,qid,optsJson){
+function pick(i){
+  // Use cached values — NO HTML encoding/decoding
+  const ci=_pendingCi;
+  const qid=_pendingQid;
+  const opts=[..._pendingOpts]; // exact copy of what was rendered
   const btns=document.querySelectorAll('.opt');
   if(btns[0].disabled)return;
   btns.forEach(b=>b.disabled=true);
   const ok=i===ci;
-  // Parse opts back (backtick-encoded)
-  let opts;
-  try{opts=JSON.parse(optsJson.split('`').join('"'));}catch{opts=RAW.find(x=>x.id===qid).o;}
   btns[i].classList.add(ok?'correct':'wrong');
   if(!ok)btns[ci].classList.add('correct');
   const fb=document.getElementById('fb');
-  // Save to dotStatus with full info for read-only replay
+  // Save with exact opts array so read-only can replay correctly
   S.dotStatus[qid]={status:ok?'ok':'no',chosenIdx:i,correctIdx:ci,opts};
   if(ok){
     S.correct++;S.history.push({id:qid,correct:true});
@@ -670,7 +693,7 @@ function pick(i,ci,qid,optsJson){
     S.wrong++;S.history.push({id:qid,correct:false});
     if(!S.missed.includes(qid))S.missed.push(qid);
     fb.className='fb show no';
-    fb.innerHTML=`<span style="font-size:18px">❌</span><span>Noto'g'ri. To'g'ri: <strong>${['A','B','C','D'][ci]}) ${opts[ci]}</strong></span>`;
+    fb.innerHTML=`<span style="font-size:18px">❌</span><span>Noto'g'ri. To'g'ri javob: <strong>${['A','B','C','D'][ci]}) ${opts[ci]}</strong></span>`;
   }
   updateStats();save();buildQnav();
   document.getElementById('nxtBtn').style.display='block';
@@ -779,4 +802,3 @@ setInterval(save,15000);
 </script>
 </body>
 </html>
-HTMLEOF
