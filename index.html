@@ -50,7 +50,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .qnav-dot.current{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important;transform:scale(1.12)}
 
 /* COUNTDOWN */
-.cd-wrap{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-bottom:12px;display:none}
+.cd-wrap{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-bottom:12px}
 .cd-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
 .cd-lbl{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:7px}
 .cd-time{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--cyan);transition:color .3s}
@@ -182,7 +182,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
     <div class="stat"><div class="stat-n c-red" id="sWrong">0</div><div class="stat-l">Noto'g'ri</div></div>
     <div class="stat"><div class="stat-n c-yellow" id="sPct">—</div><div class="stat-l">Natija</div></div>
   </div>
-  <div class="cd-wrap" id="cdWrap">
+  <div class="cd-wrap" id="cdWrap" style="display:none">
     <div class="cd-row">
       <div class="cd-lbl">⏳ Qolgan vaqt</div>
       <div class="cd-time" id="cdTime">00:00</div>
